@@ -400,7 +400,8 @@ nav button:hover {
 }
   /* testing */
 .content {
-  min-height: 70vh;        /* guarantees enough vertical space */
+  min-height: calc(100vh - 220px);
   padding: 60px 80px;
   box-sizing: border-box;
 }
+
