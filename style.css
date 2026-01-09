@@ -472,3 +472,31 @@ nav button:hover {
   border-radius: 10px;
   box-shadow: 0 0 40px rgba(200,80,80,0.4);
 }
+.sponsor {
+  font-size: 0.75rem;
+  opacity: 0.45;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.sponsor span {
+  opacity: 0.7;
+}
+.top-nav a {
+  position: relative;
+  padding: 10px 18px;
+}
+
+.top-nav a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.top-nav a:hover::before {
+  opacity: 1;
+}
