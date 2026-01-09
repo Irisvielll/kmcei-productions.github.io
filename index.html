@@ -187,17 +187,16 @@ function showGame(gameId) {
      
 <script>
 function showGame(gameId, btn) {
-  document.querySelectorAll('.game-content').forEach(game => game.classList.add('hidden'));
+  document.querySelectorAll('.game-content').forEach(g => g.classList.add('hidden'));
   document.getElementById(gameId).classList.remove('hidden');
 
-  // set active tab underline
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  if (btn) btn.classList.add('active');
+  btn.classList.add('active');
 
-  // lazy load trailer in that game
   lazyLoadVisibleTrailer();
 }
 </script>
+
 
      
      <!-- COMING SOON STEAM PAGE -->
