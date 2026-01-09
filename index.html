@@ -69,10 +69,11 @@
         <h3>Project A</h3>
         <p>In Development</p>
 
-        <div class="gallery">
-            <img src="images/game1-1.png">
-            <img src="images/game1-2.png">
-        </div>
+<div class="gallery">
+  <img src="images/gallery/gallery1.jpg" alt="Project A screenshot">
+  <img src="images/gallery/gallery2.jpg" alt="Project A screenshot">
+</div>
+
 
         <iframe src="https://www.youtube.com/embed/VIDEO_ID"
                 frameborder="0"
@@ -161,14 +162,22 @@ function showGame(gameId) {
     <p>Crafting immersive worlds and meaningful gameplay.</p>
     <button onclick="showSection('games')">Explore Our Games</button>
 </header>
+<script>
+function showGame(gameId) {
+  const games = document.querySelectorAll('.game-content');
+  games.forEach(game => game.classList.add('hidden'));
 
+  document.getElementById(gameId).classList.remove('hidden');
+}
+</script>
+<div class="coming-soon">
+    <p>🎮 Playable demo coming soon</p>
+    <p>Steam pages are currently in development.</p>
+</div>
 </body>
 </html>
 <!-- COMING SOON STEAM PAGE -->
-<div class="coming-soon">
-    <p>🎮 Playable demo coming soon</p>
-    <p>Steam and itch.io pages are currently in development.</p>
-</div>
+
 
 <!-- mobile web head -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
