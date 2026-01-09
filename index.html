@@ -301,6 +301,18 @@ devlogs
 </div>
 
 
+<script>
+function lazyLoadVisibleTrailer() {
+  document.querySelectorAll('.game-content:not(.hidden) iframe[data-src]').forEach(iframe => {
+    if (!iframe.src) {
+      iframe.src = iframe.dataset.src;
+    }
+  });
+}
+</script>
+
+
+     
 </body>
 </html>
 
