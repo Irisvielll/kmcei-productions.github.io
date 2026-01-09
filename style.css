@@ -620,6 +620,26 @@ main {
 
 
 /* scrollbar styling */
+.media-scroll {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
 .media-scroll::-webkit-scrollbar { width: 10px; }
 .media-scroll::-webkit-scrollbar-thumb {
   background: rgba(177,75,70,0.35);
