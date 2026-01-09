@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- ======================================================
-  HEAD
-====================================================== -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,58 +7,37 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="dark">
+<body>
 
-<!-- ======================================================
-  LIGHT / DARK TOGGLE (TOP RIGHT – BEST UX)
-====================================================== -->
-<button id="themeToggle" aria-label="Toggle theme">
-  🌙
-</button>
-
-<!-- ======================================================
-  HERO HEADER (ORIGINAL STYLE)
-====================================================== -->
-<header class="hero fade-in">
-  <div class="hero-text">
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-content fade-in">
     <h1 class="hero-title">KMCEI</h1>
     <h2 class="hero-subtitle">Productions</h2>
-
     <p class="hero-tagline">
       Forging stories from every realm into the living fabric of interactive gameplay.
     </p>
-
-    <button class="hero-cta" data-section="games">
-      Explore Our Games
-    </button>
+    <a href="#games" class="hero-cta">Explore Our Games</a>
   </div>
 </header>
 
-<!-- ======================================================
-  TOP NAVIGATION
-====================================================== -->
-<nav class="top-nav fade-in delay-1">
-  <a href="#" data-section="games">Games</a>
-  <a href="#" data-section="about">About</a>
-  <a href="#" data-section="media">Media</a>
-  <a href="#" data-section="news">Devlogs</a>
-  <a href="#" data-section="merch">Merch</a>
+<!-- ================= NAV ================= -->
+<nav class="top-nav">
+  <a href="#games">Games</a>
+  <a href="#about">About</a>
+  <a href="#media">Media</a>
+  <a href="#news">Devlogs</a>
+  <a href="#merch">Merch</a>
 </nav>
 
-<!-- ======================================================
-  MAIN CONTENT
-====================================================== -->
 <main>
 
-<!-- ======================================================
-  GAMES — STEAM-STYLE + TRAILER MODAL
-====================================================== -->
-<section id="games" class="content fade-in delay-2">
+<!-- ================= GAMES ================= -->
+<section id="games" class="section">
   <h2>Our Games</h2>
 
   <div class="game-grid">
 
-    <!-- Game Card -->
     <div class="game-card" data-trailer="https://www.youtube.com/embed/VIDEO_ID">
       <img src="images/gallery/gallery1.jpg" alt="Project A">
       <div class="game-overlay">
@@ -80,62 +55,44 @@
     </div>
 
   </div>
-
-  <div class="coming-soon">
-    <p>🎮 Playable demo coming soon</p>
-    <p>Steam pages are currently in development.</p>
-  </div>
 </section>
 
-<!-- ======================================================
-  ABOUT
-====================================================== -->
-<section id="about" class="content hidden fade-in">
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section">
   <h2>About KMCEI Productions</h2>
   <p>
-    KMCEI Productions is an independent game studio dedicated to
-    crafting narrative-driven interactive experiences with intention,
-    emotion, and lasting impact.
+    KMCEI Productions is an independent studio focused on narrative-driven
+    interactive experiences that leave lasting emotional impact.
   </p>
 </section>
 
-<!-- ======================================================
-  MEDIA
-====================================================== -->
-<section id="media" class="content hidden fade-in">
+<!-- ================= MEDIA ================= -->
+<section id="media" class="section">
   <h2>Screenshots</h2>
-
   <div class="gallery">
-    <img src="images/gallery/gallery1.jpg" alt="Screenshot">
-    <img src="images/gallery/gallery2.jpg" alt="Screenshot">
+    <img src="images/gallery/gallery1.jpg">
+    <img src="images/gallery/gallery2.jpg">
   </div>
 </section>
 
-<!-- ======================================================
-  DEVLOGS
-====================================================== -->
-<section id="news" class="content hidden fade-in">
+<!-- ================= DEVLOGS ================= -->
+<section id="news" class="section">
   <h2>Devlogs</h2>
-
   <article class="card">
     <h3>Devlog #1</h3>
     <p>Development has officially begun.</p>
   </article>
 </section>
 
-<!-- ======================================================
-  MERCH
-====================================================== -->
-<section id="merch" class="content hidden fade-in">
+<!-- ================= MERCH ================= -->
+<section id="merch" class="section">
   <h2>Merch Store</h2>
   <p>Coming soon.</p>
 </section>
 
 </main>
 
-<!-- ======================================================
-  BRANDING + POETIC LINE (BOTTOM)
-====================================================== -->
+<!-- ================= BRANDING ================= -->
 <section class="branding">
   <h2>KMCEI Productions</h2>
   <p class="brand-line">
@@ -143,20 +100,16 @@
   </p>
 </section>
 
-<!-- ======================================================
-  CORE TEAM (BOTTOM, HOVER SOCIALS)
-====================================================== -->
-<section class="team-section fade-in delay-3">
-
+<!-- ================= TEAM ================= -->
+<section class="team-section">
   <h2>Core Team</h2>
 
   <div class="team-grid">
 
     <div class="team-card">
-      <img src="images/team/luvelre.jpg" alt="Luvelre">
+      <img src="images/team/luvelre.jpg">
       <h3>Luvelre N.</h3>
       <p>Narrative Designer & Lead Scriptwriter</p>
-
       <div class="team-socials">
         <a href="#">𝕏</a>
         <a href="#">✦</a>
@@ -164,10 +117,9 @@
     </div>
 
     <div class="team-card">
-      <img src="images/team/milo.jpg" alt="Milo">
+      <img src="images/team/milo.jpg">
       <h3>Milo G.</h3>
       <p>Lead Visual Artist & Animation Director</p>
-
       <div class="team-socials">
         <a href="#">📷</a>
         <a href="#">🎨</a>
@@ -175,10 +127,9 @@
     </div>
 
     <div class="team-card">
-      <img src="images/team/kevin.jpg" alt="Kevin">
+      <img src="images/team/kevin.jpg">
       <h3>Kevin N.</h3>
       <p>Lead Technical Designer & Full-Stack Developer</p>
-
       <div class="team-socials">
         <a href="#">💻</a>
         <a href="#">🔗</a>
@@ -186,10 +137,9 @@
     </div>
 
     <div class="team-card">
-      <img src="images/team/konneaqua.jpg" alt="KonneAqua">
+      <img src="images/team/konneaqua.jpg">
       <h3>KonneAqua</h3>
       <p>Audio Director & Lead Composer</p>
-
       <div class="team-socials">
         <a href="#">🎵</a>
         <a href="#">▶</a>
@@ -199,16 +149,11 @@
   </div>
 </section>
 
-<!-- ======================================================
-  FOOTER
-====================================================== -->
 <footer>
   © 2026 KMCEI Productions
 </footer>
 
-<!-- ======================================================
-  TRAILER MODAL
-====================================================== -->
+<!-- ================= TRAILER MODAL ================= -->
 <div id="trailerModal" class="modal hidden">
   <div class="modal-content">
     <button class="close-modal">✕</button>
@@ -216,41 +161,8 @@
   </div>
 </div>
 
-<!-- ======================================================
-  JAVASCRIPT
-====================================================== -->
 <script>
-/* ---------------------------
-  Section Switching
---------------------------- */
-function showSection(id) {
-  document.querySelectorAll('.content').forEach(sec =>
-    sec.classList.add('hidden')
-  );
-  document.getElementById(id)?.classList.remove('hidden');
-}
-
-document.querySelectorAll('[data-section]').forEach(link => {
-  link.onclick = e => {
-    e.preventDefault();
-    showSection(link.dataset.section);
-  };
-});
-
-showSection('games');
-
-/* ---------------------------
-  Light / Dark Toggle
---------------------------- */
-const toggle = document.getElementById('themeToggle');
-toggle.onclick = () => {
-  document.body.classList.toggle('light');
-  toggle.textContent = document.body.classList.contains('light') ? '🌞' : '🌙';
-};
-
-/* ---------------------------
-  Trailer Modal Logic
---------------------------- */
+/* Trailer modal */
 const modal = document.getElementById('trailerModal');
 const iframe = modal.querySelector('iframe');
 
