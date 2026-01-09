@@ -564,3 +564,33 @@ main {
 
 .tab:hover::after { transform: scaleX(1); }
 .tab.active::after { transform: scaleX(1); }
+.top-nav a {
+  position: relative;
+  padding: 12px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: white;
+  transition: color 0.2s ease;
+}
+
+/* ring/glow */
+.top-nav a::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 999px;
+  background: radial-gradient(circle at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.9) 70%);
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.2s ease, background 0.5s ease;
+  pointer-events: none;
+}
+
+.top-nav a:hover::before {
+  opacity: 1;
+  background: radial-gradient(circle at center,
+    rgba(0,0,0,0) 55%,
+    rgba(160,160,160,0.35) 72%,
+    rgba(180,70,70,0.45) 90%
+  );
+}
