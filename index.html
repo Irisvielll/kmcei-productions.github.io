@@ -252,22 +252,6 @@ function showSection(id) {
 }
 </script>
 
-<!-- yLIGHTBOXXXX -->
-<div id="lightbox" class="hidden" onclick="closeLightbox()">
-  <img id="lightbox-img">
-</div>
-<script>
-function openLightbox(src) {
-  const lightbox = document.getElementById('lightbox');
-  const img = document.getElementById('lightbox-img');
-  img.src = src;
-  lightbox.classList.remove('hidden');
-}
-
-function closeLightbox() {
-  document.getElementById('lightbox').classList.add('hidden');
-}
-</script>
 
 
      
@@ -312,6 +296,25 @@ function lazyLoadVisibleTrailer() {
   });
 }
 </script>
+
+<!-- yLIGHTBOXXXX -->
+<div id="lightbox" class="hidden" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<script>
+function openLightbox(src) {
+  const lightbox = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  img.src = src;
+  lightbox.classList.remove('hidden');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.add('hidden');
+}
+</script>
+
      
 </body>
 </html>
