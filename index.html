@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KMCEI Productions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>KMCEI Productions</h1>
+    <p>Crafting games. Building worlds.</p>
+</header>
+
+<nav>
+    <button onclick="showSection('games')">Games</button>
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('media')">Media</button>
+    <button onclick="showSection('news')">Devlogs</button>
+    <button onclick="showSection('merch')">Merch</button>
+    <button onclick="showSection('contact')">Contact</button>
+</nav>
+
+<main>
+
+<!-- GAMES -->
+<section id="games" class="content">
+    <h2>Our Games</h2>
+    <p>All titles are currently under production.</p>
+    <div class="card">
+        <h3>Game Title Placeholder</h3>
+        <p>Status: In Development</p>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="content hidden">
+    <h2>About KMCEI Productions</h2>
+
+    <h3>Who We Are</h3>
+    <p>[Editable]</p>
+
+    <h3>The Games We Make</h3>
+    <p>[Editable]</p>
+
+    <h3>Our Vision</h3>
+    <p>[Editable]</p>
+</section>
+
+<!-- MEDIA -->
+<section id="media" class="content hidden">
+    <h2>Screenshots & Trailers</h2>
+
+    <div class="tabs">
+        <button>Game A</button>
+        <button>Game B</button>
+    </div>
+
+    <p>Select a game to view screenshots and trailers.</p>
+</section>
+
+<!-- NEWS -->
+<section id="news" class="content hidden">
+    <h2>News & Devlogs</h2>
+
+    <article>
+        <h3>Devlog #1</h3>
+        <p><small>January 2026</small></p>
+        <p>Development has officially begun.</p>
+    </article>
+
+    <article>
+        <h3>Devlog #0</h3>
+        <p><small>December 2025</small></p>
+        <p>Studio formation announcement.</p>
+    </article>
+</section>
+
+<!-- MERCH -->
+<section id="merch" class="content hidden">
+    <h2>Merch Store</h2>
+    <p>🚧 Store is currently unavailable. Check back soon.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="content hidden">
+    <h2>Contact & Socials</h2>
+    <p>Email: contact@kmcei.com</p>
+    <p>Twitter / X</p>
+    <p>Discord</p>
+    <p>YouTube</p>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 KMCEI Productions</p>
+</footer>
+
+<script>
+function showSection(id) {
+    document.querySelectorAll('.content').forEach(section => {
+        section.classList.add('hidden');
+    });
+    document.getElementById(id).classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
