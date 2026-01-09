@@ -686,16 +686,25 @@ main {
 #lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 9999;
+
+  /* IMPORTANT */
+  pointer-events: auto;
+}
+
+#lightbox.hidden {
+  display: none;
+  pointer-events: none;
 }
 
 #lightbox img {
   max-width: 90%;
   max-height: 90%;
+  border-radius: 12px;
 }
 
-.hidden { display: none; }
+
