@@ -224,6 +224,32 @@ function showGame(gameId) {
 <div id="lightbox">
   <img id="lightbox-img">
 </div>
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+document.querySelectorAll('.gallery img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightbox.style.display = 'flex';
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+</script>
+<script>
+const devlogs = [...document.querySelectorAll('.devlog')];
+const container = devlogs[0]?.parentElement;
+
+devlogs
+  .sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date))
+  .forEach(log => container.appendChild(log));
+</script>
+<div class="sponsor">
+  Supported by <span>Partner Studio</span>
+</div>
 
 
 </body>
