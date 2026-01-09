@@ -643,3 +643,10 @@ main {
   background: rgba(0,0,0,0.35);
   padding: 14px;
 }
+.game-content iframe {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  margin-top: 18px;
+}
