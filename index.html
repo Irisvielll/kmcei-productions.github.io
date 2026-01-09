@@ -128,6 +128,21 @@ function showSection(id) {
     document.getElementById(id).classList.remove('hidden');
 }
 </script>
+<script>
+function showSection(id) {
+    document.querySelectorAll('.content').forEach(section => {
+        section.classList.add('hidden');
+    });
+    document.getElementById(id).classList.remove('hidden');
+}
+
+function showGame(gameId) {
+    document.querySelectorAll('.game-content').forEach(game => {
+        game.classList.add('hidden');
+    });
+    document.getElementById(gameId).classList.remove('hidden');
+}
+</script>
 
 </body>
 </html>
