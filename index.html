@@ -164,14 +164,22 @@ function showGame(gameId) {
     <p>Crafting immersive worlds and meaningful gameplay.</p>
     <button onclick="showSection('games')">Explore Our Games</button>
 </header>
+     
 <script>
-function showGame(gameId) {
-  const games = document.querySelectorAll('.game-content');
-  games.forEach(game => game.classList.add('hidden'));
-
+function showGame(gameId, btn) {
+  document.querySelectorAll('.game-content').forEach(game => game.classList.add('hidden'));
   document.getElementById(gameId).classList.remove('hidden');
+
+  // set active tab underline
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+
+  // lazy load trailer in that game
+  lazyLoadVisibleTrailer();
 }
 </script>
+
+     
      <!-- COMING SOON STEAM PAGE -->
 <div class="coming-soon">
     <p>🎮 Playable demo coming soon</p>
