@@ -60,49 +60,68 @@
   ====================================================== -->
   <main>
 
-   <!-- ======================================================
-  GAMES — EXPANDABLE GAME INFO (NO VIDEO)
+<!-- ======================================================
+  GAMES — IMAGE TRAILER + EXPANDABLE INFO
 ====================================================== -->
 <section id="games" class="section">
 
+  <!-- SECTION HEADER -->
   <div class="section-head">
     <h2>Our Games</h2>
     <p class="muted">All titles are currently under production.</p>
   </div>
 
+  <!-- =========================
+       GAME CARDS (STEAM STYLE)
+  ========================== -->
   <div class="game-grid">
 
-    <!-- GAME CARD -->
+    <!-- GAME CARD A -->
     <article class="game-card" data-game="game-a">
+      <!-- 🔽 MAIN BANNER IMAGE -->
       <img src="images/gallery/gallery1.jpg" alt="Project A key art">
+
+      <!-- 🔽 HOVER OVERLAY -->
       <div class="game-overlay">
         <h3>Project A</h3>
         <p>In Development</p>
-        <span class="pill">View Game Info</span>
+        <span class="pill">View Media & Info</span>
       </div>
     </article>
 
-    <!-- GAME CARD -->
+    <!-- GAME CARD B -->
     <article class="game-card" data-game="game-b">
       <img src="images/gallery/gallery1.jpg" alt="Project B key art">
       <div class="game-overlay">
         <h3>Project B</h3>
         <p>In Development</p>
-        <span class="pill">View Game Info</span>
+        <span class="pill">View Media & Info</span>
       </div>
     </article>
 
   </div>
 
   <!-- =========================
-       EXPANDABLE GAME INFO
+       EXPANDABLE GAME CONTENT
   ========================== -->
   <div class="game-info-container">
 
-    <!-- PROJECT A INFO -->
+    <!-- =====================
+         PROJECT A CONTENT
+    ====================== -->
     <div id="game-a" class="game-info hidden">
-      <h3>Candle Letters</h3>
 
+      <h3>Project A</h3>
+
+      <!-- 🔽 IMAGE "TRAILER" / GALLERY -->
+      <div class="media-strip">
+        <!-- 👉 Replace images here -->
+        <img src="images/gallery/gallery1.jpg" alt="Project A screenshot 1">
+        <img src="images/gallery/gallery2.jpg" alt="Project A screenshot 2">
+        <img src="images/gallery/gallery1.jpg" alt="Project A screenshot 3">
+      </div>
+
+      <!-- 🔽 EDITABLE GAME INFO -->
       <p><strong>Introduction</strong><br>
       A narrative-driven adventure set in a fractured world where memory
       and identity blur.</p>
@@ -119,19 +138,28 @@
 
       <p><strong>Characters</strong><br>
       The Wanderer, The Archivist, The Echoes.</p>
+
     </div>
 
-    <!-- PROJECT B INFO -->
+    <!-- =====================
+         PROJECT B CONTENT
+    ====================== -->
     <div id="game-b" class="game-info hidden">
-      <h3>Khatalein</h3>
+
+      <h3>Project B</h3>
+
+      <div class="media-strip">
+        <img src="images/gallery/gallery1.jpg" alt="Project B screenshot 1">
+        <img src="images/gallery/gallery2.jpg" alt="Project B screenshot 2">
+      </div>
 
       <p><strong>Introduction</strong><br>
-      A stylized action RPG built around elemental combat and choice-driven
-      progression.</p>
+      A stylized action RPG built around elemental combat and
+      choice-driven progression.</p>
 
       <p><strong>Synopsis</strong><br>
-      Kingdoms clash as players shape alliances and rewrite the fate of
-      a dying realm.</p>
+      Kingdoms clash as players shape alliances and rewrite the fate
+      of a dying realm.</p>
 
       <p><strong>Genre</strong><br>
       Action RPG</p>
@@ -141,6 +169,7 @@
 
       <p><strong>Characters</strong><br>
       The Vanguard, The Seer, The Ash King.</p>
+
     </div>
 
   </div>
