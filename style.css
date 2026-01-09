@@ -619,3 +619,27 @@ main {
 .media-scroll::-webkit-scrollbar-thumb:hover {
   background: rgba(177,75,70,0.55);
 }
+.merch-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 12px 4px 14px;
+}
+
+.merch-row::-webkit-scrollbar { height: 10px; }
+.merch-row::-webkit-scrollbar-thumb {
+  background: rgba(177,75,70,0.35);
+  border-radius: 999px;
+}
+.merch-row::-webkit-scrollbar-thumb:hover {
+  background: rgba(177,75,70,0.55);
+}
+
+.merch-card {
+  min-width: 260px;
+  height: 140px;
+  border: 1px solid rgba(177,75,70,0.45);
+  border-radius: 14px;
+  background: rgba(0,0,0,0.35);
+  padding: 14px;
+}
