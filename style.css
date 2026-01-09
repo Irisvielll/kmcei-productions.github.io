@@ -507,3 +507,28 @@ nav button:hover {
 .content {
   min-height: calc(100vh - 200px);
 }
+/* Fade between sections */
+main { position: relative; }
+
+.content {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+  pointer-events: none;
+}
+
+.content.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s;
+  pointer-events: auto;
+}
+
+/* Make main tall enough so footer doesn't overlap */
+main {
+  min-height: calc(100vh - 220px); /* adjust if needed */
+}
