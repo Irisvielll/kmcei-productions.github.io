@@ -404,10 +404,27 @@ nav button:hover {
   padding: 60px 80px;
   box-sizing: border-box;
 }
-
+ /* IMPORTANT */
 .hidden {
   display: none;
 }
+
+.content {
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 .content {
   min-height: calc(100vh - 220px);
   padding: 60px 80px;
