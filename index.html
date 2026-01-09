@@ -52,12 +52,35 @@
     <h2>Screenshots & Trailers</h2>
 
     <div class="tabs">
-        <button>Game A</button>
-        <button>Game B</button>
+        <button onclick="showGame('game1')">Project A</button>
+        <button onclick="showGame('game2')">Project B</button>
     </div>
 
-    <p>Select a game to view screenshots and trailers.</p>
+    <div id="game1" class="game-content">
+        <h3>Project A</h3>
+        <p>In Development</p>
+
+        <div class="gallery">
+            <img src="images/game1-1.png">
+            <img src="images/game1-2.png">
+        </div>
+
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                frameborder="0"
+                allowfullscreen></iframe>
+    </div>
+
+    <div id="game2" class="game-content hidden">
+        <h3>Project B</h3>
+        <p>In Development</p>
+
+        <div class="gallery">
+            <img src="images/game2-1.png">
+            <img src="images/game2-2.png">
+        </div>
+    </div>
 </section>
+
 
 <!-- NEWS -->
 <section id="news" class="content hidden">
