@@ -61,47 +61,22 @@
 <section id="media" class="content hidden">
   <h2>Screenshots & Trailers</h2>
 
-  <!-- Tabs -->
-<div class="tabs">
-  <button class="tab active" onclick="showGame('game1', this)">Project A</button>
-  <button class="tab" onclick="showGame('game2', this)">Project B</button>
-</div>
+  <div class="tabs">
+    <button class="tab active" onclick="showGame('game1', this)">Project A</button>
+    <button class="tab" onclick="showGame('game2', this)">Project B</button>
+  </div>
 
-
-  <!-- Project A, both B too, technically media --> 
-  <div id="game1" class="game-content">
-    <h3>Project A</h3>
-    <p>In Development</p>
-
-    <div class="gallery">
-      <img src="images/gallery/gallery1.jpg" onclick="openLightbox(this.src)">
-      <img src="images/gallery/gallery2.jpg" onclick="openLightbox(this.src)">
+  <div class="media-scroll">
+    <div id="game1" class="game-content">
+      ...
     </div>
 
-  <iframe
-  data-src="https://www.youtube.com/embed/VIDEO_ID"
-  src=""
-  frameborder="0"
-  allowfullscreen>
-    
-</iframe>
-
-
-      
-  </div>
-
-  <!-- Project B -->
-  <div id="game2" class="game-content hidden">
-    <h3>Project B</h3>
-    <p>In Development</p>
+    <div id="game2" class="game-content hidden">
+      ...
+    </div>
   </div>
 </section>
 
-<section id="media" class="content hidden">
-  <div class="media-scroll">
-    <!-- everything in media goes here -->
-  </div>
-</section>
 
 
 <!-- NEWS -->
@@ -126,8 +101,7 @@
     <h2>Merch Store</h2>
     <p>🚧 Store is currently unavailable. Check back soon.</p>
 </section>
-<section id="merch" class="content hidden">
-  <h2>Merch Store</h2>
+ <h2>Merch Store</h2>
 
   <div class="merch-row">
     <div class="merch-card">Item 1</div>
@@ -152,20 +126,12 @@
     <p>© 2026 KMCEI Productions</p>
 </footer>
 
+<div id="lightbox" class="hidden">
+  <img id="lightbox-img">
+</div>
+     
 <script>
-function showSection(id) {
-    document.querySelectorAll('.content').forEach(section => {
-        section.classList.add('hidden');
-    });
-    document.getElementById(id).classList.remove('hidden');
-}
-</script>
-<script>
-function showSection(id) {
-    document.querySelectorAll('.content').forEach(section => {
-        section.classList.add('hidden');
-    });
-    document.getElementById(id).classList.remove('hidden');
+
 }
 
 function showGame(gameId) {
@@ -204,14 +170,8 @@ function showGame(gameId, btn) {
     <p>🎮 Playable demo coming soon</p>
     <p>Steam pages are currently in development.</p>
 </div>
-     <script>
-function openLightbox(src) {
-    document.getElementById('lightbox-img').src = src;
-    document.getElementById('lightbox').style.display = 'flex';
-}
+ 
 
-function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
 }
 </script>
 <script>
@@ -234,18 +194,17 @@ function closeLightbox() {
 
   <!-- your sections here -->
 
- <script>
+<script>
 function showSection(id) {
   document.querySelectorAll('.content').forEach(section => {
+    section.classList.add('hidden');
     section.classList.remove('active');
-    section.classList.add('hidden'); // optional, can keep
   });
 
   const target = document.getElementById(id);
   target.classList.remove('hidden');
   target.classList.add('active');
 
-  // Lazy-load media if entering media
   if (id === 'media') {
     lazyLoadVisibleTrailer();
   }
@@ -253,24 +212,8 @@ function showSection(id) {
 </script>
 
 
-
      
-<script>
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-
-document.querySelectorAll('.gallery img').forEach(img => {
-  img.addEventListener('click', () => {
-    lightboxImg.src = img.src;
-    lightbox.style.display = 'flex';
-  });
-});
-
-lightbox.addEventListener('click', () => {
-  lightbox.style.display = 'none';
-});
-</script>
-     
+   
 <script>
 const devlogs = [...document.querySelectorAll('.devlog')];
 const container = devlogs[0]?.parentElement;
@@ -310,23 +253,29 @@ function openLightbox(src) {
   lightbox.classList.remove('hidden');
 }
 
-function closeLightbox() {
+document.getElementById('lightbox').addEventListener('click', () => {
   document.getElementById('lightbox').classList.add('hidden');
-}
+});
 </script>
+
+
 
      
 </body>
+
+    <!-- mobile web head -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="sponsor-bar">
+  <span class="label">Supported by</span> <span class="name">Partner Studio</span>
+</div>
+    
 </html>
 
      
 
 
 
-<!-- mobile web head -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="sponsor-bar">
-  <span class="label">Supported by</span> <span class="name">Partner Studio</span>
-</div>
+
 
