@@ -500,3 +500,7 @@ nav button:hover {
 .top-nav a:hover::before {
   opacity: 1;
 }
+.game-content iframe {
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
