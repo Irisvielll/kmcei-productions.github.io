@@ -204,3 +204,14 @@ nav button:hover {
     }
 }
 
+.logo {
+    font-size: 2.8em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #F2C1B6; /* softer accent for contrast */
+    margin-left: 8px;
+}
