@@ -5,57 +5,43 @@
   HEAD
 ====================================================== -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KMCEI Productions</title>
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Smooth scroll -->
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <!-- ======================================================
-  HERO / LANDING (PARALLAX + CAROUSEL)
+  HERO / HEADER (REVERTED STYLE)
 ====================================================== -->
 <header class="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-text">
+    <h1 class="hero-title">KMCEI</h1>
+    <h2 class="hero-subtitle">Productions</h2>
 
-  <div class="hero-content">
-    <h1 class="hero-title">KMCEI Productions</h1>
-
-    <p class="hero-tagline active">
+    <p class="hero-tagline">
       Forging stories from every realm into the living fabric of interactive gameplay.
     </p>
-    <p class="hero-tagline">
-      Etching our hearts and minds into the digital ether.
-    </p>
-    <p class="hero-tagline">
-      Independent worlds. Intentional design.
-    </p>
 
-    <a href="#games" class="hero-cta">Explore Our Games</a>
+    <button class="hero-cta" type="button" data-section="games">
+      Explore Our Games
+    </button>
   </div>
 </header>
 
 <!-- ======================================================
-  TOP NAVIGATION
+  TOP NAVIGATION (CLICK-BASED)
 ====================================================== -->
 <nav class="top-nav">
-  <a href="#games">Games</a>
-  <a href="#about">About</a>
-  <a href="#team">Team</a>
-  <a href="#media">Media</a>
-  <a href="#news">Devlogs</a>
-  <a href="#merch">Merch</a>
-  <a href="#contact">Contact</a>
+  <a href="#" data-section="games">Games</a>
+  <a href="#" data-section="about">About</a>
+  <a href="#" data-section="media">Media</a>
+  <a href="#" data-section="news">Devlogs</a>
+  <a href="#" data-section="merch">Merch</a>
 </nav>
 
 <!-- ======================================================
@@ -64,37 +50,38 @@
 <main>
 
 <!-- ======================================================
-  GAMES – GLASS / STEAM-STYLE CARDS
+  GAMES (STEAM-STYLE)
 ====================================================== -->
-<section id="games" class="section">
+<section id="games" class="content">
   <h2>Our Games</h2>
 
   <div class="game-grid">
 
-    <article class="glass-card game-card">
-      <img src="images/game1.jpg" alt="Project A">
-      <div class="card-info">
-        <h3>Project A</h3>
-        <p>In Development</p>
-      </div>
+    <article class="card">
+      <img src="images/gallery/gallery1.jpg" alt="Project A">
+      <h3>Project A</h3>
+      <p>In Development</p>
     </article>
 
-    <article class="glass-card game-card">
-      <img src="images/game2.jpg" alt="Project B">
-      <div class="card-info">
-        <h3>Project B</h3>
-        <p>In Development</p>
-      </div>
+    <article class="card">
+      <img src="images/gallery/gallery2.jpg" alt="Project B">
+      <h3>Project B</h3>
+      <p>In Development</p>
     </article>
 
+  </div>
+
+  <div class="coming-soon">
+    <p>🎮 Playable demo coming soon</p>
+    <p>Steam pages are currently in development.</p>
   </div>
 </section>
 
 <!-- ======================================================
   ABOUT
 ====================================================== -->
-<section id="about" class="section">
-  <h2>About KMCEI</h2>
+<section id="about" class="content hidden">
+  <h2>About KMCEI Productions</h2>
   <p>
     KMCEI Productions is an independent game studio focused on
     narrative-driven interactive experiences.
@@ -102,44 +89,9 @@
 </section>
 
 <!-- ======================================================
-  TEAM – GLASSMORPHIC + ANIMATED
-====================================================== -->
-<section id="team" class="section">
-  <h2>Core Team</h2>
-
-  <div class="team-grid">
-
-    <div class="glass-card team-card">
-      <img src="images/team/luvelre.jpg" alt="Luvelre">
-      <h3>Luvelre N.</h3>
-      <p>Narrative Designer & Lead Scriptwriter</p>
-    </div>
-
-    <div class="glass-card team-card">
-      <img src="images/team/milo.jpg" alt="Milo">
-      <h3>Milo G.</h3>
-      <p>Lead Visual Artist & Animation Director</p>
-    </div>
-
-    <div class="glass-card team-card">
-      <img src="images/team/kevin.jpg" alt="Kevin">
-      <h3>Kevin N.</h3>
-      <p>Lead Technical Designer & Full-Stack Developer</p>
-    </div>
-
-    <div class="glass-card team-card">
-      <img src="images/team/konneaqua.jpg" alt="KonneAqua">
-      <h3>KonneAqua</h3>
-      <p>Audio Director & Lead Composer</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ======================================================
   MEDIA
 ====================================================== -->
-<section id="media" class="section">
+<section id="media" class="content hidden">
   <h2>Screenshots & Trailers</h2>
 
   <div class="gallery">
@@ -151,9 +103,10 @@
 <!-- ======================================================
   DEVLOGS
 ====================================================== -->
-<section id="news" class="section">
+<section id="news" class="content hidden">
   <h2>Devlogs</h2>
-  <article class="glass-card">
+
+  <article class="card">
     <h3>Devlog #1</h3>
     <p>Development has officially begun.</p>
   </article>
@@ -162,20 +115,50 @@
 <!-- ======================================================
   MERCH
 ====================================================== -->
-<section id="merch" class="section">
+<section id="merch" class="content hidden">
   <h2>Merch Store</h2>
   <p>Coming soon.</p>
 </section>
 
+</main>
+
 <!-- ======================================================
-  CONTACT
+  BRANDING ABOVE TEAM (BOTTOM)
 ====================================================== -->
-<section id="contact" class="section">
-  <h2>Contact</h2>
-  <p>Email: coming soon</p>
+<section class="content">
+  <h2 style="text-align:center;">KMCEI Productions</h2>
 </section>
 
-</main>
+<!-- ======================================================
+  CORE TEAM (BOTTOM SECTION)
+====================================================== -->
+<section class="content">
+  <h2 style="text-align:center;">Core Team</h2>
+
+  <div class="team-grid">
+
+    <div class="card">
+      <h3>Luvelre N.</h3>
+      <p>Narrative Designer & Lead Scriptwriter</p>
+    </div>
+
+    <div class="card">
+      <h3>Milo G.</h3>
+      <p>Lead Visual Artist & Animation Director</p>
+    </div>
+
+    <div class="card">
+      <h3>Kevin N.</h3>
+      <p>Lead Technical Designer & Full-Stack Developer</p>
+    </div>
+
+    <div class="card">
+      <h3>KonneAqua</h3>
+      <p>Audio Director & Lead Composer</p>
+    </div>
+
+  </div>
+</section>
 
 <!-- ======================================================
   FOOTER
@@ -185,17 +168,27 @@
 </footer>
 
 <!-- ======================================================
-  HERO TEXT CAROUSEL SCRIPT
+  JAVASCRIPT (SECTION SWITCHING – OLD STYLE)
 ====================================================== -->
 <script>
-  const lines = document.querySelectorAll('.hero-tagline');
-  let index = 0;
+  function showSection(id) {
+    document.querySelectorAll('.content').forEach(section => {
+      section.classList.add('hidden');
+    });
 
-  setInterval(() => {
-    lines.forEach(l => l.classList.remove('active'));
-    index = (index + 1) % lines.length;
-    lines[index].classList.add('active');
-  }, 4000);
+    const target = document.getElementById(id);
+    if (target) target.classList.remove('hidden');
+  }
+
+  document.querySelectorAll('[data-section]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      showSection(link.dataset.section);
+    });
+  });
+
+  // Default view
+  showSection('games');
 </script>
 
 </body>
