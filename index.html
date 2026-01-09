@@ -78,11 +78,22 @@
       <img src="images/gallery/gallery2.jpg" onclick="openLightbox(this.src)">
     </div>
 
-    <iframe
-      src="https://www.youtube.com/embed/VIDEO_ID"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
+  <iframe
+  data-src="https://www.youtube.com/embed/VIDEO_ID"
+  src=""
+  frameborder="0"
+  allowfullscreen>
+    
+</iframe>
+.game-content iframe {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  margin-top: 18px;
+}
+
+      
   </div>
 
   <!-- Project B -->
@@ -274,10 +285,23 @@ devlogs
 </html>
 
      
+<script>
+function lazyLoadVisibleTrailer() {
+  // load only iframe(s) inside the visible game-content
+  document.querySelectorAll('.game-content:not(.hidden) iframe[data-src]').forEach(iframe => {
+    if (!iframe.src || iframe.src === window.location.href) {
+      iframe.src = iframe.dataset.src;
+    }
+  });
+}
+</script>
 
 
 
 <!-- mobile web head -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<div class="sponsor-bar">
+  <span class="label">Supported by</span> <span class="name">Partner Studio</span>
+</div>
 
