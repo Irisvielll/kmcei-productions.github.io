@@ -206,24 +206,31 @@ function closeLightbox() {
 
   <!-- your sections here -->
 
-  <script>
+ <script>
 function showSection(id) {
   document.querySelectorAll('.content').forEach(section => {
-    section.classList.add('hidden');
+    section.classList.remove('active');
+    section.classList.add('hidden'); // optional, can keep
   });
-  document.getElementById(id).classList.remove('hidden');
-}
 
-function showGame(gameId) {
-  document.querySelectorAll('.game-content').forEach(game => {
-    game.classList.add('hidden');
-  });
-  document.getElementById(gameId).classList.remove('hidden');
+  const target = document.getElementById(id);
+  target.classList.remove('hidden');
+  target.classList.add('active');
+
+  // Lazy-load media if entering media
+  if (id === 'media') {
+    lazyLoadVisibleTrailer();
+  }
 }
 </script>
+
+
+     
 <div id="lightbox">
   <img id="lightbox-img">
 </div>
+
+     
 <script>
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
@@ -239,6 +246,7 @@ lightbox.addEventListener('click', () => {
   lightbox.style.display = 'none';
 });
 </script>
+     
 <script>
 const devlogs = [...document.querySelectorAll('.devlog')];
 const container = devlogs[0]?.parentElement;
@@ -247,6 +255,7 @@ devlogs
   .sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date))
   .forEach(log => container.appendChild(log));
 </script>
+     
 <div class="sponsor">
   Supported by <span>Partner Studio</span>
 </div>
