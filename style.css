@@ -395,3 +395,6 @@ nav button:hover {
   min-height: 70vh;
   padding: 60px 8%;
 }
+#media h2 {
+  margin-bottom: 20px;
+}
