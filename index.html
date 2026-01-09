@@ -184,13 +184,25 @@ function showGame(gameId) {
   document.getElementById(gameId).classList.remove('hidden');
 }
 </script>
+     <!-- COMING SOON STEAM PAGE -->
 <div class="coming-soon">
     <p>🎮 Playable demo coming soon</p>
     <p>Steam pages are currently in development.</p>
 </div>
+     <script>
+function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
+</script>
+
 </body>
 </html>
-<!-- COMING SOON STEAM PAGE -->
+
 
 
 <!-- mobile web head -->
