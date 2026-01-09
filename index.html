@@ -8,15 +8,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KMCEI Productions</title>
-
-  <!-- Main Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <!-- ======================================================
-  HERO / HEADER (REVERTED STYLE)
+  HERO HEADER (REVERTED, CLEAN)
 ====================================================== -->
 <header class="hero">
   <div class="hero-text">
@@ -27,14 +25,14 @@
       Forging stories from every realm into the living fabric of interactive gameplay.
     </p>
 
-    <button class="hero-cta" type="button" data-section="games">
+    <button class="hero-cta" data-section="games">
       Explore Our Games
     </button>
   </div>
 </header>
 
 <!-- ======================================================
-  TOP NAVIGATION (CLICK-BASED)
+  TOP NAVIGATION
 ====================================================== -->
 <nav class="top-nav">
   <a href="#" data-section="games">Games</a>
@@ -50,24 +48,29 @@
 <main>
 
 <!-- ======================================================
-  GAMES (STEAM-STYLE)
+  GAMES — STEAM-STYLE HOVER CARDS
 ====================================================== -->
 <section id="games" class="content">
   <h2>Our Games</h2>
 
   <div class="game-grid">
 
-    <article class="card">
+    <!-- Game Card -->
+    <div class="game-card">
       <img src="images/gallery/gallery1.jpg" alt="Project A">
-      <h3>Project A</h3>
-      <p>In Development</p>
-    </article>
+      <div class="game-overlay">
+        <h3>Project A</h3>
+        <p>In Development</p>
+      </div>
+    </div>
 
-    <article class="card">
+    <div class="game-card">
       <img src="images/gallery/gallery2.jpg" alt="Project B">
-      <h3>Project B</h3>
-      <p>In Development</p>
-    </article>
+      <div class="game-overlay">
+        <h3>Project B</h3>
+        <p>In Development</p>
+      </div>
+    </div>
 
   </div>
 
@@ -92,7 +95,7 @@
   MEDIA
 ====================================================== -->
 <section id="media" class="content hidden">
-  <h2>Screenshots & Trailers</h2>
+  <h2>Screenshots</h2>
 
   <div class="gallery">
     <img src="images/gallery/gallery1.jpg" alt="Screenshot">
@@ -123,36 +126,41 @@
 </main>
 
 <!-- ======================================================
-  BRANDING ABOVE TEAM (BOTTOM)
+  BOTTOM BRANDING (INTENTIONAL SPACING)
 ====================================================== -->
-<section class="content">
-  <h2 style="text-align:center;">KMCEI Productions</h2>
+<section class="branding">
+  <h2>KMCEI Productions</h2>
 </section>
 
 <!-- ======================================================
-  CORE TEAM (BOTTOM SECTION)
+  CORE TEAM (BOTTOM)
 ====================================================== -->
-<section class="content">
-  <h2 style="text-align:center;">Core Team</h2>
+<section class="team-section">
+
+  <h2>Core Team</h2>
 
   <div class="team-grid">
 
-    <div class="card">
+    <div class="team-card">
+      <img src="images/team/luvelre.jpg" alt="Luvelre">
       <h3>Luvelre N.</h3>
       <p>Narrative Designer & Lead Scriptwriter</p>
     </div>
 
-    <div class="card">
+    <div class="team-card">
+      <img src="images/team/milo.jpg" alt="Milo">
       <h3>Milo G.</h3>
       <p>Lead Visual Artist & Animation Director</p>
     </div>
 
-    <div class="card">
+    <div class="team-card">
+      <img src="images/team/kevin.jpg" alt="Kevin">
       <h3>Kevin N.</h3>
       <p>Lead Technical Designer & Full-Stack Developer</p>
     </div>
 
-    <div class="card">
+    <div class="team-card">
+      <img src="images/team/konneaqua.jpg" alt="KonneAqua">
       <h3>KonneAqua</h3>
       <p>Audio Director & Lead Composer</p>
     </div>
@@ -168,26 +176,23 @@
 </footer>
 
 <!-- ======================================================
-  JAVASCRIPT (SECTION SWITCHING – OLD STYLE)
+  JAVASCRIPT — SECTION SWITCHING
 ====================================================== -->
 <script>
   function showSection(id) {
-    document.querySelectorAll('.content').forEach(section => {
-      section.classList.add('hidden');
-    });
-
-    const target = document.getElementById(id);
-    if (target) target.classList.remove('hidden');
+    document.querySelectorAll('.content').forEach(sec =>
+      sec.classList.add('hidden')
+    );
+    document.getElementById(id)?.classList.remove('hidden');
   }
 
   document.querySelectorAll('[data-section]').forEach(link => {
-    link.addEventListener('click', e => {
+    link.onclick = e => {
       e.preventDefault();
       showSection(link.dataset.section);
-    });
+    };
   });
 
-  // Default view
   showSection('games');
 </script>
 
