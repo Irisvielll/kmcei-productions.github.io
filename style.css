@@ -1,347 +1,281 @@
-/* =========================
-   KMCEI Productions - CLEAN CSS
-   ========================= */
+/* ======================================================
+   KMCEI Productions — MASTER CSS
+   Clean • Glassmorphic • Mobile-first
+====================================================== */
 
-/* -------- Base -------- */
-* { box-sizing: border-box; }
+/* --------------------
+   RESET / BASE
+-------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
   background: #0f0f0f;
   color: #ffffff;
+  line-height: 1.6;
 }
 
-/* -------- Hero -------- */
+/* ======================================================
+   HERO SECTION (PARALLAX + CAROUSEL)
+====================================================== */
 .hero {
-  background: #902923;
-  padding: 80px 20px;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+}
+
+/* Parallax background */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url("images/hero-bg.jpg") center / cover no-repeat;
+  transform: translateZ(0);
+  will-change: transform;
+  z-index: 0;
+}
+
+/* Dark overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.85)
+  );
+  z-index: 1;
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
 }
 
 .hero-title {
   font-size: 3.5rem;
   font-weight: 800;
   letter-spacing: 4px;
-  margin: 0;
-}
-
-.hero-subtitle {
-  font-size: 1.6rem;
-  font-weight: 400;
-  letter-spacing: 6px;
-  margin-top: 8px;
-  opacity: 0.9;
 }
 
 .hero-tagline {
   max-width: 700px;
   margin: 24px auto 0;
   font-size: 1rem;
-  line-height: 1.6;
-  opacity: 0.85;
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
 
-/* optional logo style */
-.logo {
-  font-size: 2.8em;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: #ffffff;
-}
-.logo span {
-  color: #F2C1B6;
-  margin-left: 8px;
+.hero-tagline.active {
+  opacity: 0.9;
 }
 
-/* -------- Top Nav (links) -------- */
+/* CTA */
+.hero-cta {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(162,44,41,0.85);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* ======================================================
+   TOP NAVIGATION
+====================================================== */
 .top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #0f0f0f;
   display: flex;
   justify-content: center;
   gap: 18px;
   padding: 14px 0;
-  background: #0f0f0f;
 }
 
 .top-nav a {
   position: relative;
-  padding: 12px 16px;
+  padding: 10px 16px;
   border-radius: 999px;
-  color: #fff;
   text-decoration: none;
+  color: #fff;
   font-size: 0.9rem;
   letter-spacing: 1px;
-  transition: color 0.2s ease;
 }
 
-/* glow rings */
+/* Glow ring hover */
 .top-nav a::before {
   content: "";
   position: absolute;
   inset: -6px;
   border-radius: 999px;
   opacity: 0;
-  transform: scale(0.98);
   transition: opacity 0.2s ease, background 0.5s ease;
-  pointer-events: none;
 }
 
 .top-nav a:hover::before {
   opacity: 1;
-  background: radial-gradient(circle at center,
+  background: radial-gradient(
+    circle at center,
     rgba(0,0,0,0) 55%,
     rgba(160,160,160,0.25) 72%,
     rgba(180,70,70,0.45) 90%
   );
 }
 
-/* -------- Old nav buttons (if you still use <nav><button>) -------- */
-nav {
-  background-color: #1a1a1a;
-  padding: 10px;
-  text-align: center;
+/* ======================================================
+   SECTIONS (GLOBAL)
+====================================================== */
+.section {
+  min-height: 100vh;
+  padding: 80px 8%;
 }
 
-nav button {
-  background: none;
-  border: 1px solid #A22C29;
-  color: #ffffff;
-  margin: 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-nav button:hover {
-  background-color: rgba(162, 44, 41, 0.2);
-  transform: translateY(-2px);
-}
-
-/* -------- Main + Sections -------- */
-main {
-  position: relative;
-  min-height: calc(100vh - 220px); /* keeps footer from overlapping */
-  padding: 0; /* sections handle their own padding */
-}
-
-/* all sections */
-.content {
-  min-height: calc(100vh - 220px);
-  padding: 60px 8%;
-  padding-bottom: 90px; /* extra breathing room above footer */
-}
-
-/* headings */
 h2 {
   color: #A22C29;
-  margin-top: 0;
+  margin-bottom: 24px;
 }
 
-/* cards */
-.card {
-  border: 1px solid rgba(162, 44, 41, 0.65);
-  padding: 15px;
-  margin-top: 15px;
-  border-radius: 14px;
-  background: rgba(0,0,0,0.25);
-  transition: background 0.25s ease;
+/* ======================================================
+   GLASSMORPHISM BASE
+====================================================== */
+.glass-card {
+  background: rgba(20,20,20,0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.card:hover {
-  background-color: rgba(162, 44, 41, 0.08);
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.65);
 }
 
-/* -------- Fade between sections -------- */
-/* We use BOTH classes:
-   - .hidden => display none (fully removed)
-   - .active => visible + animated
-*/
-.hidden { display: none !important; }
-
-.content.active {
-  animation: fadeIn 0.35s ease;
+/* ======================================================
+   GAMES — STEAM-STYLE CARDS
+====================================================== */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+.game-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
 }
 
-/* -------- Tabs (Media) -------- */
-.tabs {
-  display: flex;
-  gap: 12px;
-  margin: 12px 0 18px;
+.card-info {
+  padding: 16px;
 }
 
-.tab {
-  position: relative;
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(177,75,70,0.8);
-  padding: 10px 16px;
-  cursor: pointer;
-  border-radius: 12px;
-  transition: background 0.2s ease;
+/* ======================================================
+   TEAM SECTION
+====================================================== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
 }
 
-.tab:hover {
-  background: rgba(162, 44, 41, 0.18);
+.team-card {
+  text-align: center;
+  padding: 22px;
 }
 
-/* animated underline */
-.tab::after {
-  content: "";
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: 6px;
-  height: 2px;
-  background: rgba(177,75,70,0.9);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.2s ease;
-  opacity: 0.9;
+.team-card img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 14px;
+  border: 2px solid rgba(255,255,255,0.15);
 }
 
-.tab:hover::after,
-.tab.active::after {
-  transform: scaleX(1);
+.team-card h3 {
+  margin-bottom: 6px;
 }
 
-/* -------- Media vertical scroll -------- */
-.media-scroll {
-  max-height: calc(100vh - 260px);
-  overflow-y: auto;
-  padding-right: 12px;
-}
-
-/* scrollbar styling */
-.media-scroll::-webkit-scrollbar { width: 10px; }
-.media-scroll::-webkit-scrollbar-thumb {
-  background: rgba(177,75,70,0.35);
-  border-radius: 999px;
-}
-.media-scroll::-webkit-scrollbar-thumb:hover {
-  background: rgba(177,75,70,0.55);
-}
-
-/* -------- Gallery -------- */
+/* ======================================================
+   MEDIA GALLERY
+====================================================== */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
 }
 
 .gallery img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  background: #111;
 }
 
 .gallery img:hover {
   transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(180,60,60,0.35);
+  box-shadow: 0 0 24px rgba(180,60,60,0.35);
 }
 
-/* -------- Trailer iframe -------- */
-.game-content iframe {
-  width: 100%;
-  max-width: 900px;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  border-radius: 12px;
-  margin-top: 18px;
-  border: 0;
-}
-
-/* -------- Lightbox -------- */
-#lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  pointer-events: auto;
-}
-
-#lightbox.hidden {
-  display: none !important;
-  pointer-events: none;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  box-shadow: 0 0 40px rgba(200,80,80,0.35);
-}
-
-/* -------- Merch horizontal scroll -------- */
-.merch-row {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding: 12px 4px 14px;
-}
-
-.merch-row::-webkit-scrollbar { height: 10px; }
-.merch-row::-webkit-scrollbar-thumb {
-  background: rgba(177,75,70,0.35);
-  border-radius: 999px;
-}
-.merch-row::-webkit-scrollbar-thumb:hover {
-  background: rgba(177,75,70,0.55);
-}
-
-.merch-card {
-  min-width: 260px;
-  height: 140px;
-  border: 1px solid rgba(177,75,70,0.45);
-  border-radius: 14px;
-  background: rgba(0,0,0,0.35);
-  padding: 14px;
-}
-
-/* -------- Sponsor bar (ad border bottom style) -------- */
-.sponsor-bar {
-  border-top: 1px solid rgba(177,75,70,0.5);
-  border-bottom: 1px solid rgba(177,75,70,0.25);
-  padding: 10px 18px;
-  color: rgba(255,255,255,0.8);
-  background: rgba(0,0,0,0.35);
-}
-
-.sponsor-bar .label { opacity: 0.7; }
-.sponsor-bar .name  { color: #d36a63; font-weight: 600; }
-
-/* -------- Footer -------- */
+/* ======================================================
+   FOOTER
+====================================================== */
 footer {
-  background-color: #1a1a1a;
+  background: #1a1a1a;
   text-align: center;
-  padding: 10px;
-  margin-top: 0;
+  padding: 18px;
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
 
-/* -------- Mobile -------- */
+/* ======================================================
+   MOBILE REFINEMENTS
+====================================================== */
 @media (max-width: 768px) {
-  .hero { padding: 60px 15px; }
-  .hero-title { font-size: 2.2em; }
-  .hero-subtitle { font-size: 1.1em; }
 
-  .content {
-    padding: 20px 15px;
-    min-height: calc(100vh - 220px);
+  .hero-title {
+    font-size: 2.2rem;
   }
 
-  .gallery img { height: 200px; }
+  .section {
+    padding: 60px 16px;
+  }
+
+  .gallery img {
+    height: 200px;
+  }
+
+  .team-card img {
+    width: 80px;
+    height: 80px;
+  }
 }
