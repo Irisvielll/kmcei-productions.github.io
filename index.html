@@ -71,7 +71,8 @@
 </section>
 
 <!-- MEDIA -->
-<section id="media" class="content hidden">
+<section id="media" class="content">
+
     <h2>Screenshots & Trailers</h2>
 
     <div class="tabs">
@@ -219,6 +220,22 @@ function closeLightbox() {
   };
 </script>
 
+
+  <!-- your sections here -->
+
+  <script>
+  function showSection(id) {
+    document.querySelectorAll('.content').forEach(section => {
+      section.classList.add('hidden');
+    });
+    document.getElementById(id).classList.remove('hidden');
+  }
+  </script>
+
+</body>
+</html>
+
+     
 </body>
 </html>
 
@@ -226,3 +243,5 @@ function closeLightbox() {
 
 <!-- mobile web head -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
