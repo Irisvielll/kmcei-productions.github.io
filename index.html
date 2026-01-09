@@ -202,6 +202,22 @@ function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
 }
 </script>
+<script>
+  const galleryImages = document.querySelectorAll('.gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  galleryImages.forEach(img => {
+    img.onclick = () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.remove('hidden');
+    };
+  });
+
+  lightbox.onclick = () => {
+    lightbox.classList.add('hidden');
+  };
+</script>
 
 </body>
 </html>
