@@ -66,17 +66,27 @@
     <button class="tab" onclick="showGame('game2', this)">Project B</button>
   </div>
 
-  <div class="media-scroll">
-    <div id="game1" class="game-content">
-      ...
+  <div class="game-content" id="game1">
+    <h3>Project A</h3>
+    <p>In Development</p>
+
+    <div class="gallery">
+      <img src="images/gallery/gallery1.jpg" onclick="openLightbox(this.src)">
+      <img src="images/gallery/gallery2.jpg" onclick="openLightbox(this.src)">
     </div>
 
-    <div id="game2" class="game-content hidden">
-      ...
-    </div>
+    <iframe
+      data-src="https://www.youtube.com/embed/VIDEO_ID"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="game-content hidden" id="game2">
+    <h3>Project B</h3>
+    <p>In Development</p>
   </div>
 </section>
-
 
 
 <!-- NEWS -->
@@ -147,21 +157,10 @@ function showGame(gameId) {
     KMCEI<span>Productions</span>
 </div>
 
-    <p>Crafting immersive worlds and meaningful gameplay.</p>
+    <p> Etching our hearts and minds into the digital ether. .</p>
     <button onclick="showSection('games')">Explore Our Games</button>
 </header>
-     
-<script>
-function showGame(gameId, btn) {
-  document.querySelectorAll('.game-content').forEach(g => g.classList.add('hidden'));
-  document.getElementById(gameId).classList.remove('hidden');
-
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-
-  lazyLoadVisibleTrailer();
-}
-</script>
+    
 
 
      
@@ -198,45 +197,53 @@ function showGame(gameId, btn) {
 function showSection(id) {
   document.querySelectorAll('.content').forEach(section => {
     section.classList.add('hidden');
-    section.classList.remove('active');
   });
 
   const target = document.getElementById(id);
+  if (!target) return;
+
   target.classList.remove('hidden');
-  target.classList.add('active');
 
   if (id === 'media') {
     lazyLoadVisibleTrailer();
   }
 }
-</script>
 
+function showGame(gameId, btn) {
+  document.querySelectorAll('.game-content').forEach(g =>
+    g.classList.add('hidden')
+  );
 
-     
-   
-<script>
-const devlogs = [...document.querySelectorAll('.devlog')];
-const container = devlogs[0]?.parentElement;
+  document.getElementById(gameId).classList.remove('hidden');
 
-devlogs
-  .sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date))
-  .forEach(log => container.appendChild(log));
-</script>
-     
-<div class="sponsor">
-  Supported by <span>Partner Studio</span>
-</div>
+  document.querySelectorAll('.tab').forEach(t =>
+    t.classList.remove('active')
+  );
 
+  if (btn) btn.classList.add('active');
 
+  lazyLoadVisibleTrailer();
+}
 
-<script>
+function openLightbox(src) {
+  const lightbox = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  img.src = src;
+  lightbox.classList.remove('hidden');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.add('hidden');
+}
+
 function lazyLoadVisibleTrailer() {
-  // load only iframe(s) inside the visible game-content
-  document.querySelectorAll('.game-content:not(.hidden) iframe[data-src]').forEach(iframe => {
-    if (!iframe.src || iframe.src === window.location.href) {
-      iframe.src = iframe.dataset.src;
-    }
-  });
+  document
+    .querySelectorAll('.game-content:not(.hidden) iframe[data-src]')
+    .forEach(iframe => {
+      if (!iframe.src) {
+        iframe.src = iframe.dataset.src;
+      }
+    });
 }
 </script>
 
