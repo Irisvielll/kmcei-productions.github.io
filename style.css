@@ -131,3 +131,76 @@ nav button:hover {
     text-align: center;
     background-color: rgba(162, 44, 41, 0.05);
 }
+/* =========================
+   MOBILE LAYOUT (PHASE 2)
+   ========================= */
+@media (max-width: 768px) {
+
+    /* Hero section */
+    .hero {
+        padding: 60px 15px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .hero button {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    /* Navigation */
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    nav button {
+        flex: 1 1 45%;
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    /* Content spacing */
+    main {
+        padding: 20px 15px;
+    }
+
+    /* Game cards */
+    .card {
+        padding: 15px;
+        font-size: 0.95em;
+    }
+
+    /* Image gallery */
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery img {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* Coming soon box */
+    .coming-soon {
+        font-size: 0.95em;
+        padding: 15px;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 0.85em;
+        padding: 15px;
+    }
+}
+
