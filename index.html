@@ -1,190 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- ======================================================
+  KMCEI Productions — FINAL WORKING HTML
+  - Smooth anchor scroll (NO section swapping)
+  - Steam-style game cards + trailer modal
+  - Bottom branding band (maroon) + team cards
+  - Light/Dark toggle + fade-in micro animations
+====================================================== -->
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KMCEI Productions</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="theme-dark">
 
-<!-- ================= HERO ================= -->
-<header class="hero">
-  <div class="hero-content fade-in">
-    <h1 class="hero-title">KMCEI</h1>
-    <h2 class="hero-subtitle">Productions</h2>
-    <p class="hero-tagline">
-      Forging stories from every realm into the living fabric of interactive gameplay.
-    </p>
-    <a href="#games" class="hero-cta">Explore Our Games</a>
+  <!-- ======================================================
+    THEME TOGGLE (TOP-RIGHT)
+  ====================================================== -->
+  <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+    🌙
+  </button>
+
+  <!-- ======================================================
+    HERO (OLD STYLE: KMCEI / Productions / Tagline)
+    NOTE: uses solid maroon background so it never turns black
+  ====================================================== -->
+  <header class="hero">
+    <div class="hero-inner fade-on-load">
+      <h1 class="hero-title">KMCEI</h1>
+      <h2 class="hero-subtitle">Productions</h2>
+
+      <p class="hero-tagline">
+        Forging stories from every realm into the living fabric of interactive gameplay.
+      </p>
+
+      <!-- Scrolls to games -->
+      <a class="hero-cta" href="#games">Explore Our Games</a>
+    </div>
+  </header>
+
+  <!-- ======================================================
+    TOP NAV (ANCHOR LINKS)
+    IMPORTANT: No JS preventDefault here, so scrolling works.
+  ====================================================== -->
+  <nav class="top-nav">
+    <a href="#games">Games</a>
+    <a href="#about">About</a>
+    <a href="#media">Media</a>
+    <a href="#news">Devlogs</a>
+    <a href="#merch">Merch</a>
+    <a href="#bottom">Team</a>
+  </nav>
+
+  <!-- ======================================================
+    MAIN CONTENT (ALL VISIBLE SECTIONS)
+  ====================================================== -->
+  <main>
+
+    <!-- ======================================================
+      GAMES — STEAM STYLE CARDS
+      Click a game to open Trailer Modal (YouTube embed)
+    ====================================================== -->
+    <section id="games" class="section reveal">
+      <div class="section-head">
+        <h2>Our Games</h2>
+        <p class="muted">All titles are currently under production.</p>
+      </div>
+
+      <div class="game-grid">
+
+        <!-- GAME CARD (uses ONE sample image: gallery1.jpg) -->
+        <article class="game-card"
+          role="button"
+          tabindex="0"
+          data-trailer="https://www.youtube.com/embed/VIDEO_ID"
+          aria-label="Open Project A trailer">
+          <img src="images/gallery/gallery1.jpg" alt="Project A key art" />
+          <div class="game-overlay">
+            <h3>Project A</h3>
+            <p>In Development</p>
+            <span class="pill">Click to watch trailer</span>
+          </div>
+        </article>
+
+        <!-- GAME CARD (uses ONE sample image: gallery1.jpg again) -->
+        <article class="game-card"
+          role="button"
+          tabindex="0"
+          data-trailer="https://www.youtube.com/embed/VIDEO_ID"
+          aria-label="Open Project B trailer">
+          <img src="images/gallery/gallery1.jpg" alt="Project B key art" />
+          <div class="game-overlay">
+            <h3>Project B</h3>
+            <p>In Development</p>
+            <span class="pill">Click to watch trailer</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="callout">
+        <p>🎮 Playable demo coming soon</p>
+        <p class="muted">Steam pages are currently in development.</p>
+      </div>
+    </section>
+
+    <!-- ======================================================
+      ABOUT
+    ====================================================== -->
+    <section id="about" class="section reveal">
+      <div class="section-head">
+        <h2>About KMCEI Productions</h2>
+      </div>
+
+      <div class="glass">
+        <p>
+          KMCEI Productions is an independent game studio dedicated to crafting narrative-driven interactive
+          experiences with intention, emotion, and lasting impact.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================================================
+      MEDIA (SINGLE IMAGE ONLY — per your request)
+    ====================================================== -->
+    <section id="media" class="section reveal">
+      <div class="section-head">
+        <h2>Screenshots</h2>
+      </div>
+
+      <div class="gallery">
+        <img src="images/gallery/gallery1.jpg" alt="Screenshot 1" />
+      </div>
+    </section>
+
+    <!-- ======================================================
+      DEVLOGS
+    ====================================================== -->
+    <section id="news" class="section reveal">
+      <div class="section-head">
+        <h2>Devlogs</h2>
+      </div>
+
+      <article class="glass devlog">
+        <h3>Devlog #1</h3>
+        <p class="muted">January 2026</p>
+        <p>Development has officially begun.</p>
+      </article>
+    </section>
+
+    <!-- ======================================================
+      MERCH
+    ====================================================== -->
+    <section id="merch" class="section reveal">
+      <div class="section-head">
+        <h2>Merch</h2>
+        <p class="muted">Coming soon.</p>
+      </div>
+
+      <div class="merch-row">
+        <div class="merch-card glass">Item 1</div>
+        <div class="merch-card glass">Item 2</div>
+        <div class="merch-card glass">Item 3</div>
+        <div class="merch-card glass">Item 4</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================
+    BOTTOM BRANDING BAND (MAROON LIKE YOUR PHOTO 3)
+    Contains: KMCEI Productions + "Etching..." + Team Cards
+  ====================================================== -->
+  <section id="bottom" class="bottom-band">
+    <div class="bottom-inner reveal">
+      <div class="bottom-branding">
+        <h2 class="bottom-title">KMCEI Productions</h2>
+        <p class="bottom-line">Etching our hearts and minds into the digital ether.</p>
+      </div>
+
+      <h3 class="bottom-subhead">Core Team</h3>
+
+      <div class="team-grid">
+
+        <article class="team-card" aria-label="Luvelre N.">
+          <img src="images/team/luvelre.jpg" alt="Luvelre portrait" />
+          <h4>Luvelre N.</h4>
+          <p class="muted">Narrative Designer &amp; Lead Scriptwriter</p>
+
+          <!-- Social icons appear on hover -->
+          <div class="team-socials" aria-label="Luvelre socials">
+            <a href="#" title="X / Twitter" aria-label="X">𝕏</a>
+            <a href="#" title="Portfolio" aria-label="Portfolio">⌁</a>
+          </div>
+        </article>
+
+        <article class="team-card" aria-label="Milo G.">
+          <img src="images/team/milo.jpg" alt="Milo portrait" />
+          <h4>Milo G.</h4>
+          <p class="muted">Lead Visual Artist &amp; Animation Director</p>
+
+          <div class="team-socials" aria-label="Milo socials">
+            <a href="#" title="Instagram" aria-label="Instagram">⌁</a>
+            <a href="#" title="Art portfolio" aria-label="Art">✦</a>
+          </div>
+        </article>
+
+        <article class="team-card" aria-label="Kevin N.">
+          <img src="images/team/kevin.jpg" alt="Kevin portrait" />
+          <h4>Kevin N.</h4>
+          <p class="muted">Lead Technical Designer &amp; Full-Stack Developer</p>
+
+          <div class="team-socials" aria-label="Kevin socials">
+            <a href="#" title="GitHub" aria-label="GitHub">⟠</a>
+            <a href="#" title="LinkedIn" aria-label="LinkedIn">in</a>
+          </div>
+        </article>
+
+        <article class="team-card" aria-label="KonneAqua">
+          <img src="images/team/konneaqua.jpg" alt="KonneAqua portrait" />
+          <h4>KonneAqua</h4>
+          <p class="muted">Audio Director &amp; Lead Composer</p>
+
+          <div class="team-socials" aria-label="KonneAqua socials">
+            <a href="#" title="YouTube" aria-label="YouTube">▶</a>
+            <a href="#" title="SoundCloud" aria-label="SoundCloud">☁</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+    FOOTER
+  ====================================================== -->
+  <footer class="footer">
+    <p>© 2026 KMCEI Productions</p>
+  </footer>
+
+  <!-- ======================================================
+    TRAILER MODAL
+    How it works:
+    - Click a .game-card
+    - JS reads data-trailer="...youtube embed..."
+    - It sets iframe src and opens modal
+    - Closing clears iframe src (stops audio)
+  ====================================================== -->
+  <div id="trailerModal" class="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Trailer modal">
+      <button class="modal-close" type="button" aria-label="Close trailer">✕</button>
+      <div class="modal-frame">
+        <iframe id="trailerFrame"
+          src=""
+          title="Game Trailer"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
   </div>
-</header>
 
-<!-- ================= NAV ================= -->
-<nav class="top-nav">
-  <a href="#games">Games</a>
-  <a href="#about">About</a>
-  <a href="#media">Media</a>
-  <a href="#news">Devlogs</a>
-  <a href="#merch">Merch</a>
-</nav>
+  <!-- ======================================================
+    JAVASCRIPT (SAFE + MINIMAL)
+    - Theme toggle
+    - Trailer modal
+    - Fade-in on scroll (IntersectionObserver)
+  ====================================================== -->
+  <script>
+    // ---------- Theme Toggle ----------
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
 
-<main>
+    function setTheme(next) {
+      body.classList.toggle('theme-light', next === 'light');
+      body.classList.toggle('theme-dark', next === 'dark');
+      themeToggle.textContent = next === 'light' ? '🌞' : '🌙';
+      localStorage.setItem('kmcei-theme', next);
+    }
 
-<!-- ================= GAMES ================= -->
-<section id="games" class="section">
-  <h2>Our Games</h2>
+    const saved = localStorage.getItem('kmcei-theme');
+    setTheme(saved || 'dark');
 
-  <div class="game-grid">
+    themeToggle.addEventListener('click', () => {
+      const next = body.classList.contains('theme-light') ? 'dark' : 'light';
+      setTheme(next);
+    });
 
-    <div class="game-card" data-trailer="https://www.youtube.com/embed/VIDEO_ID">
-      <img src="images/gallery/gallery1.jpg" alt="Project A">
-      <div class="game-overlay">
-        <h3>Project A</h3>
-        <p>In Development</p>
-      </div>
-    </div>
+    // ---------- Trailer Modal ----------
+    const modal = document.getElementById('trailerModal');
+    const frame = document.getElementById('trailerFrame');
+    const closeBtn = document.querySelector('.modal-close');
 
-    <div class="game-card" data-trailer="https://www.youtube.com/embed/VIDEO_ID">
-      <img src="images/gallery/gallery2.jpg" alt="Project B">
-      <div class="game-overlay">
-        <h3>Project B</h3>
-        <p>In Development</p>
-      </div>
-    </div>
+    function openTrailer(url) {
+      frame.src = url;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
 
-  </div>
-</section>
+    function closeTrailer() {
+      frame.src = '';
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
 
-<!-- ================= ABOUT ================= -->
-<section id="about" class="section">
-  <h2>About KMCEI Productions</h2>
-  <p>
-    KMCEI Productions is an independent studio focused on narrative-driven
-    interactive experiences that leave lasting emotional impact.
-  </p>
-</section>
+    document.querySelectorAll('.game-card').forEach(card => {
+      const url = card.dataset.trailer;
 
-<!-- ================= MEDIA ================= -->
-<section id="media" class="section">
-  <h2>Screenshots</h2>
-  <div class="gallery">
-    <img src="images/gallery/gallery1.jpg">
-    <img src="images/gallery/gallery2.jpg">
-  </div>
-</section>
+      card.addEventListener('click', () => openTrailer(url));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') openTrailer(url);
+      });
+    });
 
-<!-- ================= DEVLOGS ================= -->
-<section id="news" class="section">
-  <h2>Devlogs</h2>
-  <article class="card">
-    <h3>Devlog #1</h3>
-    <p>Development has officially begun.</p>
-  </article>
-</section>
+    closeBtn.addEventListener('click', closeTrailer);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeTrailer();
+    });
 
-<!-- ================= MERCH ================= -->
-<section id="merch" class="section">
-  <h2>Merch Store</h2>
-  <p>Coming soon.</p>
-</section>
+    // ---------- Micro-animations (fade-in on scroll) ----------
+    const revealTargets = document.querySelectorAll('.reveal');
 
-</main>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
 
-<!-- ================= BRANDING ================= -->
-<section class="branding">
-  <h2>KMCEI Productions</h2>
-  <p class="brand-line">
-    Etching our hearts and minds into the digital ether.
-  </p>
-</section>
-
-<!-- ================= TEAM ================= -->
-<section class="team-section">
-  <h2>Core Team</h2>
-
-  <div class="team-grid">
-
-    <div class="team-card">
-      <img src="images/team/luvelre.jpg">
-      <h3>Luvelre N.</h3>
-      <p>Narrative Designer & Lead Scriptwriter</p>
-      <div class="team-socials">
-        <a href="#">𝕏</a>
-        <a href="#">✦</a>
-      </div>
-    </div>
-
-    <div class="team-card">
-      <img src="images/team/milo.jpg">
-      <h3>Milo G.</h3>
-      <p>Lead Visual Artist & Animation Director</p>
-      <div class="team-socials">
-        <a href="#">📷</a>
-        <a href="#">🎨</a>
-      </div>
-    </div>
-
-    <div class="team-card">
-      <img src="images/team/kevin.jpg">
-      <h3>Kevin N.</h3>
-      <p>Lead Technical Designer & Full-Stack Developer</p>
-      <div class="team-socials">
-        <a href="#">💻</a>
-        <a href="#">🔗</a>
-      </div>
-    </div>
-
-    <div class="team-card">
-      <img src="images/team/konneaqua.jpg">
-      <h3>KonneAqua</h3>
-      <p>Audio Director & Lead Composer</p>
-      <div class="team-socials">
-        <a href="#">🎵</a>
-        <a href="#">▶</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  © 2026 KMCEI Productions
-</footer>
-
-<!-- ================= TRAILER MODAL ================= -->
-<div id="trailerModal" class="modal hidden">
-  <div class="modal-content">
-    <button class="close-modal">✕</button>
-    <iframe src="" allowfullscreen></iframe>
-  </div>
-</div>
-
-<script>
-/* Trailer modal */
-const modal = document.getElementById('trailerModal');
-const iframe = modal.querySelector('iframe');
-
-document.querySelectorAll('.game-card').forEach(card => {
-  card.onclick = () => {
-    iframe.src = card.dataset.trailer;
-    modal.classList.remove('hidden');
-  };
-});
-
-document.querySelector('.close-modal').onclick = () => {
-  iframe.src = '';
-  modal.classList.add('hidden');
-};
-
-modal.onclick = e => {
-  if (e.target === modal) {
-    iframe.src = '';
-    modal.classList.add('hidden');
-  }
-};
-</script>
+    revealTargets.forEach(el => io.observe(el));
+  </script>
 
 </body>
 </html>
