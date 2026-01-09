@@ -11,19 +11,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="dark">
+<body>
 
 <!-- ======================================================
-  LIGHT / DARK TOGGLE (TOP RIGHT – BEST UX)
+  HERO HEADER (REVERTED, CLEAN)
 ====================================================== -->
-<button id="themeToggle" aria-label="Toggle theme">
-  🌙
-</button>
-
-<!-- ======================================================
-  HERO HEADER (ORIGINAL STYLE)
-====================================================== -->
-<header class="hero fade-in">
+<header class="hero">
   <div class="hero-text">
     <h1 class="hero-title">KMCEI</h1>
     <h2 class="hero-subtitle">Productions</h2>
@@ -41,7 +34,7 @@
 <!-- ======================================================
   TOP NAVIGATION
 ====================================================== -->
-<nav class="top-nav fade-in delay-1">
+<nav class="top-nav">
   <a href="#" data-section="games">Games</a>
   <a href="#" data-section="about">About</a>
   <a href="#" data-section="media">Media</a>
@@ -55,15 +48,15 @@
 <main>
 
 <!-- ======================================================
-  GAMES — STEAM-STYLE + TRAILER MODAL
+  GAMES — STEAM-STYLE HOVER CARDS
 ====================================================== -->
-<section id="games" class="content fade-in delay-2">
+<section id="games" class="content">
   <h2>Our Games</h2>
 
   <div class="game-grid">
 
     <!-- Game Card -->
-    <div class="game-card" data-trailer="https://www.youtube.com/embed/VIDEO_ID">
+    <div class="game-card">
       <img src="images/gallery/gallery1.jpg" alt="Project A">
       <div class="game-overlay">
         <h3>Project A</h3>
@@ -71,7 +64,7 @@
       </div>
     </div>
 
-    <div class="game-card" data-trailer="https://www.youtube.com/embed/VIDEO_ID">
+    <div class="game-card">
       <img src="images/gallery/gallery2.jpg" alt="Project B">
       <div class="game-overlay">
         <h3>Project B</h3>
@@ -90,19 +83,18 @@
 <!-- ======================================================
   ABOUT
 ====================================================== -->
-<section id="about" class="content hidden fade-in">
+<section id="about" class="content hidden">
   <h2>About KMCEI Productions</h2>
   <p>
-    KMCEI Productions is an independent game studio dedicated to
-    crafting narrative-driven interactive experiences with intention,
-    emotion, and lasting impact.
+    KMCEI Productions is an independent game studio focused on
+    narrative-driven interactive experiences.
   </p>
 </section>
 
 <!-- ======================================================
   MEDIA
 ====================================================== -->
-<section id="media" class="content hidden fade-in">
+<section id="media" class="content hidden">
   <h2>Screenshots</h2>
 
   <div class="gallery">
@@ -114,7 +106,7 @@
 <!-- ======================================================
   DEVLOGS
 ====================================================== -->
-<section id="news" class="content hidden fade-in">
+<section id="news" class="content hidden">
   <h2>Devlogs</h2>
 
   <article class="card">
@@ -126,7 +118,7 @@
 <!-- ======================================================
   MERCH
 ====================================================== -->
-<section id="merch" class="content hidden fade-in">
+<section id="merch" class="content hidden">
   <h2>Merch Store</h2>
   <p>Coming soon.</p>
 </section>
@@ -134,19 +126,16 @@
 </main>
 
 <!-- ======================================================
-  BRANDING + POETIC LINE (BOTTOM)
+  BOTTOM BRANDING (INTENTIONAL SPACING)
 ====================================================== -->
 <section class="branding">
   <h2>KMCEI Productions</h2>
-  <p class="brand-line">
-    Etching our hearts and minds into the digital ether.
-  </p>
 </section>
 
 <!-- ======================================================
-  CORE TEAM (BOTTOM, HOVER SOCIALS)
+  CORE TEAM (BOTTOM)
 ====================================================== -->
-<section class="team-section fade-in delay-3">
+<section class="team-section">
 
   <h2>Core Team</h2>
 
@@ -156,44 +145,24 @@
       <img src="images/team/luvelre.jpg" alt="Luvelre">
       <h3>Luvelre N.</h3>
       <p>Narrative Designer & Lead Scriptwriter</p>
-
-      <div class="team-socials">
-        <a href="#">𝕏</a>
-        <a href="#">✦</a>
-      </div>
     </div>
 
     <div class="team-card">
       <img src="images/team/milo.jpg" alt="Milo">
       <h3>Milo G.</h3>
       <p>Lead Visual Artist & Animation Director</p>
-
-      <div class="team-socials">
-        <a href="#">📷</a>
-        <a href="#">🎨</a>
-      </div>
     </div>
 
     <div class="team-card">
       <img src="images/team/kevin.jpg" alt="Kevin">
       <h3>Kevin N.</h3>
       <p>Lead Technical Designer & Full-Stack Developer</p>
-
-      <div class="team-socials">
-        <a href="#">💻</a>
-        <a href="#">🔗</a>
-      </div>
     </div>
 
     <div class="team-card">
       <img src="images/team/konneaqua.jpg" alt="KonneAqua">
       <h3>KonneAqua</h3>
       <p>Audio Director & Lead Composer</p>
-
-      <div class="team-socials">
-        <a href="#">🎵</a>
-        <a href="#">▶</a>
-      </div>
     </div>
 
   </div>
@@ -207,71 +176,24 @@
 </footer>
 
 <!-- ======================================================
-  TRAILER MODAL
-====================================================== -->
-<div id="trailerModal" class="modal hidden">
-  <div class="modal-content">
-    <button class="close-modal">✕</button>
-    <iframe src="" allowfullscreen></iframe>
-  </div>
-</div>
-
-<!-- ======================================================
-  JAVASCRIPT
+  JAVASCRIPT — SECTION SWITCHING
 ====================================================== -->
 <script>
-/* ---------------------------
-  Section Switching
---------------------------- */
-function showSection(id) {
-  document.querySelectorAll('.content').forEach(sec =>
-    sec.classList.add('hidden')
-  );
-  document.getElementById(id)?.classList.remove('hidden');
-}
-
-document.querySelectorAll('[data-section]').forEach(link => {
-  link.onclick = e => {
-    e.preventDefault();
-    showSection(link.dataset.section);
-  };
-});
-
-showSection('games');
-
-/* ---------------------------
-  Light / Dark Toggle
---------------------------- */
-const toggle = document.getElementById('themeToggle');
-toggle.onclick = () => {
-  document.body.classList.toggle('light');
-  toggle.textContent = document.body.classList.contains('light') ? '🌞' : '🌙';
-};
-
-/* ---------------------------
-  Trailer Modal Logic
---------------------------- */
-const modal = document.getElementById('trailerModal');
-const iframe = modal.querySelector('iframe');
-
-document.querySelectorAll('.game-card').forEach(card => {
-  card.onclick = () => {
-    iframe.src = card.dataset.trailer;
-    modal.classList.remove('hidden');
-  };
-});
-
-document.querySelector('.close-modal').onclick = () => {
-  iframe.src = '';
-  modal.classList.add('hidden');
-};
-
-modal.onclick = e => {
-  if (e.target === modal) {
-    iframe.src = '';
-    modal.classList.add('hidden');
+  function showSection(id) {
+    document.querySelectorAll('.content').forEach(sec =>
+      sec.classList.add('hidden')
+    );
+    document.getElementById(id)?.classList.remove('hidden');
   }
-};
+
+  document.querySelectorAll('[data-section]').forEach(link => {
+    link.onclick = e => {
+      e.preventDefault();
+      showSection(link.dataset.section);
+    };
+  });
+
+  showSection('games');
 </script>
 
 </body>
