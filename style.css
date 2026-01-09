@@ -277,3 +277,36 @@ nav button:hover {
     opacity: 1;
     background: radial-gradient(circle, rgba(255,255,255,0.25), rgba(162,44,41,0.4));
 }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+#lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
