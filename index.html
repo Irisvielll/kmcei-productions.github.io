@@ -62,10 +62,11 @@
   <h2>Screenshots & Trailers</h2>
 
   <!-- Tabs -->
-  <div class="tabs">
-    <button onclick="showGame('game1')">Project A</button>
-    <button onclick="showGame('game2')">Project B</button>
-  </div>
+<div class="tabs">
+  <button class="tab active" onclick="showGame('game1', this)">Project A</button>
+  <button class="tab" onclick="showGame('game2', this)">Project B</button>
+</div>
+
 
   <!-- Project A -->
   <div id="game1" class="game-content">
