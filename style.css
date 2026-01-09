@@ -408,3 +408,8 @@ nav button:hover {
 .hidden {
   display: none;
 }
+.content {
+  min-height: calc(100vh - 220px);
+  padding: 60px 80px;
+  box-sizing: border-box;
+}
