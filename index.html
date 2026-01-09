@@ -60,53 +60,93 @@
   ====================================================== -->
   <main>
 
-    <!-- ======================================================
-      GAMES — STEAM STYLE CARDS
-      Click a game to open Trailer Modal (YouTube embed)
-    ====================================================== -->
-    <section id="games" class="section reveal">
-      <div class="section-head">
-        <h2>Our Games</h2>
-        <p class="muted">All titles are currently under production.</p>
+   <!-- ======================================================
+  GAMES — EXPANDABLE GAME INFO (NO VIDEO)
+====================================================== -->
+<section id="games" class="section">
+
+  <div class="section-head">
+    <h2>Our Games</h2>
+    <p class="muted">All titles are currently under production.</p>
+  </div>
+
+  <div class="game-grid">
+
+    <!-- GAME CARD -->
+    <article class="game-card" data-game="game-a">
+      <img src="images/gallery/gallery1.jpg" alt="Project A key art">
+      <div class="game-overlay">
+        <h3>Project A</h3>
+        <p>In Development</p>
+        <span class="pill">View Game Info</span>
       </div>
+    </article>
 
-      <div class="game-grid">
-
-        <!-- GAME CARD (uses ONE sample image: gallery1.jpg) -->
-        <article class="game-card"
-          role="button"
-          tabindex="0"
-          data-trailer="https://www.youtube.com/embed/VIDEO_ID"
-          aria-label="Open Project A trailer">
-          <img src="images/gallery/gallery1.jpg" alt="Project A key art" />
-          <div class="game-overlay">
-            <h3>Project A</h3>
-            <p>In Development</p>
-            <span class="pill">Click to watch trailer</span>
-          </div>
-        </article>
-
-        <!-- GAME CARD (uses ONE sample image: gallery1.jpg again) -->
-        <article class="game-card"
-          role="button"
-          tabindex="0"
-          data-trailer="https://www.youtube.com/embed/VIDEO_ID"
-          aria-label="Open Project B trailer">
-          <img src="images/gallery/gallery1.jpg" alt="Project B key art" />
-          <div class="game-overlay">
-            <h3>Project B</h3>
-            <p>In Development</p>
-            <span class="pill">Click to watch trailer</span>
-          </div>
-        </article>
-
+    <!-- GAME CARD -->
+    <article class="game-card" data-game="game-b">
+      <img src="images/gallery/gallery1.jpg" alt="Project B key art">
+      <div class="game-overlay">
+        <h3>Project B</h3>
+        <p>In Development</p>
+        <span class="pill">View Game Info</span>
       </div>
+    </article>
 
-      <div class="callout">
-        <p>🎮 Playable demo coming soon</p>
-        <p class="muted">Steam pages are currently in development.</p>
-      </div>
-    </section>
+  </div>
+
+  <!-- =========================
+       EXPANDABLE GAME INFO
+  ========================== -->
+  <div class="game-info-container">
+
+    <!-- PROJECT A INFO -->
+    <div id="game-a" class="game-info hidden">
+      <h3>Candle Letters</h3>
+
+      <p><strong>Introduction</strong><br>
+      A narrative-driven adventure set in a fractured world where memory
+      and identity blur.</p>
+
+      <p><strong>Synopsis</strong><br>
+      Players follow a lone traveler uncovering forgotten truths buried
+      beneath collapsing civilizations.</p>
+
+      <p><strong>Genre</strong><br>
+      Narrative Adventure / Exploration</p>
+
+      <p><strong>Game Style</strong><br>
+      Third-person, story-focused, atmospheric gameplay.</p>
+
+      <p><strong>Characters</strong><br>
+      The Wanderer, The Archivist, The Echoes.</p>
+    </div>
+
+    <!-- PROJECT B INFO -->
+    <div id="game-b" class="game-info hidden">
+      <h3>Khatalein</h3>
+
+      <p><strong>Introduction</strong><br>
+      A stylized action RPG built around elemental combat and choice-driven
+      progression.</p>
+
+      <p><strong>Synopsis</strong><br>
+      Kingdoms clash as players shape alliances and rewrite the fate of
+      a dying realm.</p>
+
+      <p><strong>Genre</strong><br>
+      Action RPG</p>
+
+      <p><strong>Game Style</strong><br>
+      Fast-paced combat with narrative branching.</p>
+
+      <p><strong>Characters</strong><br>
+      The Vanguard, The Seer, The Ash King.</p>
+    </div>
+
+  </div>
+
+</section>
+
 
     <!-- ======================================================
       ABOUT
