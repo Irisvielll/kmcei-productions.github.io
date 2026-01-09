@@ -92,3 +92,14 @@ nav button:hover {
 .card:hover {
     background-color: rgba(162, 44, 41, 0.1);
 }
+.gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.gallery img {
+    width: 200px;
+    border-radius: 6px;
+    border: 1px solid #A22C29;
+}
