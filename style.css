@@ -124,3 +124,10 @@ nav button:hover {
     color: white;
     cursor: pointer;
 }
+.coming-soon {
+    border: 1px dashed #A22C29;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: rgba(162, 44, 41, 0.05);
+}
