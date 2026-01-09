@@ -504,3 +504,6 @@ nav button:hover {
   aspect-ratio: 16 / 9;
   height: auto;
 }
+.content {
+  min-height: calc(100vh - 200px);
+}
