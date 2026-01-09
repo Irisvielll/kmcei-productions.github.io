@@ -594,3 +594,13 @@ main {
     rgba(180,70,70,0.45) 90%
   );
 }
+.sponsor-bar {
+  border-top: 1px solid rgba(177,75,70,0.5);
+  border-bottom: 1px solid rgba(177,75,70,0.25);
+  padding: 10px 18px;
+  color: rgba(255,255,255,0.8);
+  background: rgba(0,0,0,0.35);
+}
+
+.sponsor-bar .label { opacity: 0.7; }
+.sponsor-bar .name { color: #d36a63; font-weight: 600; }
