@@ -32,21 +32,6 @@
 
 
 <main>
-    <!-- Gallery -->
-<section id="media" class="content">
-    <h2>Media</h2>
-
-    <div class="gallery">
-        <img src="images/gallery/gallery1.jpg" onclick="openLightbox(this.src)">
-        <img src="images/gallery/gallery2.jpg" onclick="openLightbox(this.src)">
-        <img src="images/gallery/gallery1.jpg" onclick="openLightbox(this.src)">
-        <img src="images/gallery/gallery2.jpg" onclick="openLightbox(this.src)">
-    </div>
-</section>
-
-<div id="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img">
-</div>
 
 <!-- GAMES -->
 <section id="games" class="content">
@@ -74,43 +59,38 @@
 
 <!-- MEDIA -->
 <section id="media" class="content hidden">
+  <h2>Screenshots & Trailers</h2>
 
+  <!-- Tabs -->
+  <div class="tabs">
+    <button onclick="showGame('game1')">Project A</button>
+    <button onclick="showGame('game2')">Project B</button>
+  </div>
 
-    <h2>Screenshots & Trailers</h2>
+  <!-- Project A -->
+  <div id="game1" class="game-content">
+    <h3>Project A</h3>
+    <p>In Development</p>
 
-    <div class="tabs">
-        <button onclick="showGame('game1')">Project A</button>
-        <button onclick="showGame('game2')">Project B</button>
+    <div class="gallery">
+      <img src="images/gallery/gallery1.jpg" onclick="openLightbox(this.src)">
+      <img src="images/gallery/gallery2.jpg" onclick="openLightbox(this.src)">
     </div>
 
-    <div id="game1" class="game-content">
-        <h3>Project A</h3>
-        <p>In Development</p>
+    <iframe
+      src="https://www.youtube.com/embed/VIDEO_ID"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
 
-<div class="gallery">
-  <img src="images/gallery/gallery1.jpg" alt="Project A screenshot">
-  <img src="images/gallery/gallery2.jpg" alt="Project A screenshot">
-</div>
-
-
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID"
-                frameborder="0"
-                allowfullscreen></iframe>
-    </div>
-
-    <div id="game2" class="game-content hidden">
-        <h3>Project B</h3>
-        <p>In Development</p>
-
-        <div class="gallery">
-            <img src="images/game2-1.png">
-            <img src="images/game2-2.png">
-        </div>
-    </div>
+  <!-- Project B -->
+  <div id="game2" class="game-content hidden">
+    <h3>Project B</h3>
+    <p>In Development</p>
+  </div>
 </section>
-<div id="lightbox" class="lightbox hidden">
-  <img id="lightbox-img">
-</div>
+
 
 
 <!-- NEWS -->
