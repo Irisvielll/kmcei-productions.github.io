@@ -376,58 +376,36 @@
      GAME CARD INTERACTION
 ========================= -->
 <script>
-  const gameCards = document.querySelectorAll('.game-card');
-  const gameInfos = document.querySelectorAll('.game-info');
+  const cards = document.querySelectorAll('.game-card');
+  const infos = document.querySelectorAll('.game-info');
 
-  let activeGame = null;
-
-  gameCards.forEach(card => {
+  cards.forEach(card => {
     card.addEventListener('click', e => {
       e.preventDefault();
       e.stopPropagation();
 
-      const gameId = card.dataset.game;
-      const infoPanel = document.getElementById(gameId);
+      const id = card.dataset.game;
+      const info = document.getElementById(id);
 
-      // If clicking the same card → close it
-      if (card.classList.contains('active')) {
-        resetGames();
-        return;
+      const isActive = card.classList.contains('active');
+
+      cards.forEach(c => c.classList.remove('active', 'inactive'));
+      infos.forEach(i => i.classList.remove('active'));
+
+      if (!isActive) {
+        card.classList.add('active');
+        cards.forEach(c => c !== card && c.classList.add('inactive'));
+        info.classList.add('active');
       }
-
-      resetGames();
-
-      // Activate clicked card
-      card.classList.add('active');
-      activeGame = card;
-
-      // Dim other cards
-      gameCards.forEach(c => {
-        if (c !== card) c.classList.add('inactive');
-      });
-
-      // Show matching info
-      infoPanel.classList.add('active');
     });
   });
 
-  // Click anywhere outside → close
   document.addEventListener('click', () => {
-    resetGames();
+    cards.forEach(c => c.classList.remove('active', 'inactive'));
+    infos.forEach(i => i.classList.remove('active'));
   });
-
-  function resetGames() {
-    gameCards.forEach(card => {
-      card.classList.remove('active', 'inactive');
-    });
-
-    gameInfos.forEach(info => {
-      info.classList.remove('active');
-    });
-
-    activeGame = null;
-  }
 </script>
+
 
 </body>
 </html>
