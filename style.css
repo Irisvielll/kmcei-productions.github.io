@@ -716,3 +716,40 @@ h2{
   filter: grayscale(100%) brightness(0.9);
   opacity: 0.85;
 }
+/* =========================
+   PRODUCTION TITLE STACK
+========================= */
+.production-title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.production-bg {
+  display: block;
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: rgba(255,255,255,0.18);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.production-fg {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 900;
+  color: #000000; /* BLACK */
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.production-tagline {
+  text-align: center;
+  font-style: italic;
+  opacity: 0.9;
+  margin-bottom: 50px;
+}
