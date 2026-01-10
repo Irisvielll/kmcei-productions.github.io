@@ -416,3 +416,89 @@ h2{
     align-items: center;
   }
 }
+/* ======================================================
+   TEAM — FINAL HORIZONTAL MAROON SECTION (PRODUCTION SAFE)
+====================================================== */
+
+/* Maroon separation band */
+.bottom-band {
+  background: linear-gradient(180deg, var(--maroon), var(--maroon-2));
+  padding: 70px 18px 80px;
+}
+
+/* Grid stays vertical list (one per row) */
+.team-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Horizontal card layout */
+.team-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 18px 22px;
+  border-radius: 18px;
+
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(10px);
+
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+/* Circular profile picture */
+.team-card img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+
+  border: 2px solid rgba(255,255,255,0.25);
+}
+
+/* Name */
+.team-card h4 {
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+/* Role text */
+.team-card .muted {
+  font-size: 0.85rem;
+}
+
+/* Social icons */
+.team-socials {
+  margin-top: 6px;
+  display: flex;
+  gap: 10px;
+
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.team-card:hover .team-socials {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile safety */
+@media (max-width: 600px) {
+  .team-card {
+    padding: 16px;
+  }
+}
+
