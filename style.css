@@ -83,8 +83,9 @@ body.theme-light .theme-toggle{
 /* --------------------
   HERO (OLD STYLE)
 -------------------- */
-.hero{
-  min-height: 72vh;
+.hero {
+  min-height: 60vh;
+  max-height: 720px;
   display: grid;
   place-items: center;
   text-align: center;
