@@ -905,42 +905,30 @@ h2{
 
 /* ======================================================
    ADD-ON: KMCEI SCRIPT FONT + SOFT GLOW
-   (Non-destructive override)
 ====================================================== */
-
 .production-fg {
   font-family: "Brush Script MT", "Segoe Script", cursive;
-  font-size: clamp(3.2rem, 7vw, 5.6rem); /* bigger */
+  font-size: clamp(3.2rem, 7vw, 5.6rem);
   font-weight: 900;
-
-  /* soft glow */
   text-shadow:
     0 0 12px rgba(0,0,0,0.35),
     0 0 28px rgba(0,0,0,0.25);
 }
+
 /* ======================================================
    ADD-ON: TAGLINE SIZE BOOST
 ====================================================== */
-
 .production-tagline,
 .hero-tagline {
   font-size: clamp(1.15rem, 2.4vw, 1.6rem);
 }
 
-/* ======================================================
-   ADD-ON: TAGLINE SIZE BOOST
-====================================================== */
-
-.production-tagline,
-.hero-tagline {
-  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
-}
 /* ======================================================
    ADD-ON: ENHANCED TEAM CARD HOVER LIFT
 ====================================================== */
-
 .team-card:hover,
 .team-member:hover {
   transform: translateY(-6px);
   box-shadow: 0 28px 60px rgba(0,0,0,0.45);
 }
+
