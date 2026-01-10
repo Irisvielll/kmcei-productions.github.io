@@ -370,6 +370,45 @@
 
     revealTargets.forEach(el => io.observe(el));
   </script>
+</footer>
+
+<!-- =========================
+     GAME CARD INTERACTION
+========================= -->
+<script>
+const cards = document.querySelectorAll('.game-card');
+const infos = document.querySelectorAll('.game-info');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const id = card.dataset.game;
+    const info = document.getElementById(id);
+    const isActive = card.classList.contains('active');
+
+    // Reset everything
+    cards.forEach(c => c.classList.remove('active', 'inactive'));
+    infos.forEach(i => i.classList.remove('active'));
+
+    // If already open, close all
+    if (isActive) return;
+
+    // Activate clicked card + info
+    card.classList.add('active');
+    info.classList.add('active');
+
+    // Dim other cards
+    cards.forEach(c => {
+      if (c !== card) c.classList.add('inactive');
+    });
+
+    // Smooth scroll to info
+    info.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
