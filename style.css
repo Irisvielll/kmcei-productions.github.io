@@ -479,28 +479,62 @@ h2{
   font-size: 0.85rem;
 }
 
-/* Social icons */
+/* Social iconssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */
+/* =========================
+   TEAM SOCIAL ICONS — FIXED
+========================= */
+
 .team-socials {
-  margin-top: 6px;
+  margin-top: 8px;
   display: flex;
   gap: 10px;
+  justify-content: center;
 
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.team-card:hover .team-socials {
+  /* Visible by default (important for mobile) */
   opacity: 1;
   transform: translateY(0);
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* Mobile safety */
+/* Desktop: subtle reveal effect */
+@media (hover: hover) {
+  .team-socials {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  .team-card:hover .team-socials,
+  .team-member:hover .team-socials {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buttons themselves */
+.team-socials a {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.team-socials a:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+/* Mobile spacing safety */
 @media (max-width: 600px) {
   .team-card {
     padding: 16px;
   }
 }
+
 
 /* ======================================================
    ADS / PARTNERS — FINAL SECTION
