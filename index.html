@@ -388,11 +388,10 @@
   cards.forEach(card => {
     card.addEventListener('click', e => {
       e.preventDefault();
-      e.stopPropagation();
+      e.stopImmediatePropagation();
 
       const id = card.dataset.game;
       const info = document.getElementById(id);
-
       const isActive = card.classList.contains('active');
 
       cards.forEach(c => c.classList.remove('active', 'inactive'));
@@ -411,7 +410,6 @@
     infos.forEach(i => i.classList.remove('active'));
   });
 </script>
-
 
 </body>
 </html>
