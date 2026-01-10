@@ -13,9 +13,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KMCEI Productions</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
+  <!-- ✅ FAVICON (works on GitHub Pages) -->
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 </head>
 
 <body class="theme-dark">
@@ -47,7 +48,6 @@
 
   <!-- ======================================================
     TOP NAV (ANCHOR LINKS)
-    IMPORTANT: No JS preventDefault here, so scrolling works.
   ====================================================== -->
   <nav class="top-nav">
     <a href="#games">Games</a>
@@ -63,89 +63,88 @@
   ====================================================== -->
   <main>
 
-<!-- ======================================================
-  GAMES — EXPANDABLE INFO PANEL (STABLE VERSION)
-====================================================== -->
-<section id="games" class="section games-section">
+    <!-- ======================================================
+      GAMES — EXPANDABLE INFO PANEL (STABLE VERSION)
+    ====================================================== -->
+    <section id="games" class="section games-section">
 
-  <div class="section-head">
-    <h2>Our Games</h2>
-    <p class="muted">All titles are currently under production.</p>
-  </div>
-
-  <!-- =========================
-       GAME GRID (BASE LAYOUT)
-  ========================== -->
-  <div class="game-grid">
-
-    <!-- ========= PROJECT A ========= -->
-    <article class="game-card" data-game="game-a">
-      <img src="images/gallery/gallery1.jpg" alt="Project A key art">
-      <div class="game-overlay">
-        <h3>Project A</h3>
-        <p>In Development</p>
-        <span class="pill">View Game Info</span>
+      <div class="section-head">
+        <h2>Our Games</h2>
+        <p class="muted">All titles are currently under production.</p>
       </div>
-    </article>
 
-    <!-- ========= PROJECT B ========= -->
-    <article class="game-card" data-game="game-b">
-      <img src="images/gallery/gallery1.jpg" alt="Project B key art">
-      <div class="game-overlay">
-        <h3>Project B</h3>
-        <p>In Development</p>
-        <span class="pill">View Game Info</span>
+      <!-- =========================
+           GAME GRID (BASE LAYOUT)
+      ========================== -->
+      <div class="game-grid">
+
+        <!-- ========= PROJECT A ========= -->
+        <article class="game-card" data-game="game-a" tabindex="0" role="button" aria-label="Open Project A info">
+          <img src="images/gallery/gallery1.jpg" alt="Project A key art">
+          <div class="game-overlay">
+            <h3>Project A</h3>
+            <p>In Development</p>
+            <span class="pill">View Game Info</span>
+          </div>
+        </article>
+
+        <!-- ========= PROJECT B ========= -->
+        <article class="game-card" data-game="game-b" tabindex="0" role="button" aria-label="Open Project B info">
+          <img src="images/gallery/gallery1.jpg" alt="Project B key art">
+          <div class="game-overlay">
+            <h3>Project B</h3>
+            <p>In Development</p>
+            <span class="pill">View Game Info</span>
+          </div>
+        </article>
+
+        <!-- 🔽 ADD MORE PROJECTS HERE (COPY ABOVE BLOCK) -->
+
       </div>
-    </article>
 
-    <!-- 🔽 ADD MORE PROJECTS HERE (COPY ABOVE BLOCK) -->
+      <!-- =========================
+           FADE-DOWN GAME INFO PANEL
+      ========================== -->
+      <div class="game-info-container">
 
-  </div>
+        <!-- ===== PROJECT A INFO ===== -->
+        <div id="game-a" class="game-info">
+          <h3>Project A</h3>
 
-  <!-- =========================
-       FADE-DOWN GAME INFO PANEL
-  ========================== -->
-  <div class="game-info-container">
+          <p><strong>Introduction</strong><br>
+            A narrative-driven adventure set in a fractured world.</p>
 
-    <!-- ===== PROJECT A INFO ===== -->
-    <div id="game-a" class="game-info">
-      <h3>Project A</h3>
+          <p><strong>Synopsis</strong><br>
+            Players uncover forgotten histories beneath collapsing civilizations.</p>
 
-      <p><strong>Introduction</strong><br>
-        A narrative-driven adventure set in a fractured world.</p>
+          <p><strong>Genre</strong><br>
+            Narrative Adventure</p>
 
-      <p><strong>Synopsis</strong><br>
-        Players uncover forgotten histories beneath collapsing civilizations.</p>
+          <p><strong>Game Style</strong><br>
+            Third-person, atmospheric, story-focused.</p>
+        </div>
 
-      <p><strong>Genre</strong><br>
-        Narrative Adventure</p>
+        <!-- ===== PROJECT B INFO ===== -->
+        <div id="game-b" class="game-info">
+          <h3>Project B</h3>
 
-      <p><strong>Game Style</strong><br>
-        Third-person, atmospheric, story-focused.</p>
-    </div>
+          <p><strong>Introduction</strong><br>
+            A stylized action RPG centered on elemental combat.</p>
 
-    <!-- ===== PROJECT B INFO ===== -->
-    <div id="game-b" class="game-info">
-      <h3>Project B</h3>
+          <p><strong>Synopsis</strong><br>
+            Shape alliances and rewrite the fate of a dying realm.</p>
 
-      <p><strong>Introduction</strong><br>
-        A stylized action RPG centered on elemental combat.</p>
+          <p><strong>Genre</strong><br>
+            Action RPG</p>
 
-      <p><strong>Synopsis</strong><br>
-        Shape alliances and rewrite the fate of a dying realm.</p>
+          <p><strong>Game Style</strong><br>
+            Fast-paced combat with branching narratives.</p>
+        </div>
 
-      <p><strong>Genre</strong><br>
-        Action RPG</p>
+        <!-- 🔽 ADD MORE GAME INFO BLOCKS MATCHING data-game -->
 
-      <p><strong>Game Style</strong><br>
-        Fast-paced combat with branching narratives.</p>
-    </div>
-
-    <!-- 🔽 ADD MORE GAME INFO BLOCKS MATCHING data-game -->
-
-  </div>
-</section>
-
+      </div>
+    </section>
 
     <!-- ======================================================
       ABOUT
@@ -177,7 +176,7 @@
     </section>
 
     <!-- ======================================================
-      DEVLOGS
+      DEVLOGS (✅ FIXED STRUCTURE)
     ====================================================== -->
     <section id="news" class="section reveal">
       <div class="section-head">
@@ -189,14 +188,14 @@
         <p class="muted">February 2025</p>
         <p>Development of Candle Letters has officially begun.</p>
       </article>
-    </section>
-    
-  <article class="glass devlog">
-        <h3>Devlog #1</h3>
+
+      <article class="glass devlog" style="margin-top: 14px;">
+        <h3>Devlog #2</h3>
         <p class="muted">January 10, 2026</p>
-        <p>Art is Underway.</p>
+        <p>Art is underway.</p>
       </article>
     </section>
+
     <!-- ======================================================
       MERCH
     ====================================================== -->
@@ -217,8 +216,7 @@
   </main>
 
   <!-- ======================================================
-    BOTTOM BRANDING BAND (MAROON LIKE YOUR PHOTO 3)
-    Contains: KMCEI Productions + "Etching..." + Team Cards
+    BOTTOM BRANDING BAND
   ====================================================== -->
   <section id="bottom" class="bottom-band">
     <div class="bottom-inner reveal">
@@ -235,8 +233,6 @@
           <img src="images/gallery/gallery1.jpg" alt="Luvelre portrait" />
           <h4>Luvelre N.</h4>
           <p class="muted">Narrative Designer &amp; Lead Scriptwriter</p>
-
-          <!-- Social icons appear on hover -->
           <div class="team-socials" aria-label="Luvelre socials">
             <a href="#" title="X / Twitter" aria-label="X">𝕏</a>
             <a href="#" title="Portfolio" aria-label="Portfolio">⌁</a>
@@ -247,7 +243,6 @@
           <img src="images/gallery/gallery1.jpg" alt="Milo portrait" />
           <h4>Milo G.</h4>
           <p class="muted">Lead Visual Artist &amp; Animation Director</p>
-
           <div class="team-socials" aria-label="Milo socials">
             <a href="#" title="Instagram" aria-label="Instagram">⌁</a>
             <a href="#" title="Art portfolio" aria-label="Art">✦</a>
@@ -258,7 +253,6 @@
           <img src="images/gallery/gallery1.jpg" alt="Kevin portrait" />
           <h4>Kevin N.</h4>
           <p class="muted">Lead Technical Designer &amp; Full-Stack Developer</p>
-
           <div class="team-socials" aria-label="Kevin socials">
             <a href="#" title="GitHub" aria-label="GitHub">⟠</a>
             <a href="#" title="LinkedIn" aria-label="LinkedIn">in</a>
@@ -269,7 +263,6 @@
           <img src="images/gallery/gallery1.jpg" alt="KonneAqua portrait" />
           <h4>KonneAqua</h4>
           <p class="muted">Audio Director &amp; Lead Composer</p>
-
           <div class="team-socials" aria-label="KonneAqua socials">
             <a href="#" title="YouTube" aria-label="YouTube">▶</a>
             <a href="#" title="SoundCloud" aria-label="SoundCloud">☁</a>
@@ -288,19 +281,10 @@
   </footer>
 
   <!-- ======================================================
-    TRAILER MODAL
-    How it works:
-    - Click a .game-card
-    - JS reads data-trailer="...youtube embed..."
-    - It sets iframe src and opens modal
-    - Closing clears iframe src (stops audio)
-  ====================================================== -->
-
-  <!-- ======================================================
     JAVASCRIPT (SAFE + MINIMAL)
     - Theme toggle
-    - Trailer modal
-    - Fade-in on scroll (IntersectionObserver)
+    - Fade-in on scroll
+    - Game card expand/collapse
   ====================================================== -->
   <script>
     // ---------- Theme Toggle ----------
@@ -322,16 +306,8 @@
       setTheme(next);
     });
 
-
-
-    closeBtn.addEventListener('click', closeTrailer);
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeTrailer();
-    });
-
     // ---------- Micro-animations (fade-in on scroll) ----------
     const revealTargets = document.querySelectorAll('.reveal');
-
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -342,41 +318,48 @@
     }, { threshold: 0.15 });
 
     revealTargets.forEach(el => io.observe(el));
-  </script>
-</footer>
 
-<!-- =========================
-     GAME CARD INTERACTION
-========================= -->
-<script>
-  const cards = document.querySelectorAll('.game-card');
-  const infos = document.querySelectorAll('.game-info');
+    // ---------- Game Card Interaction ----------
+    const cards = document.querySelectorAll('.game-card');
+    const infos = document.querySelectorAll('.game-info');
 
-  cards.forEach(card => {
-    card.addEventListener('click', e => {
-      e.stopPropagation();
+    function resetGames() {
+      cards.forEach(c => c.classList.remove('active', 'inactive'));
+      infos.forEach(i => i.classList.remove('active'));
+    }
 
+    function toggleGame(card) {
       const id = card.dataset.game;
       const info = document.getElementById(id);
       const isActive = card.classList.contains('active');
 
-      cards.forEach(c => c.classList.remove('active', 'inactive'));
-      infos.forEach(i => i.classList.remove('active'));
+      resetGames();
 
       if (!isActive) {
         card.classList.add('active');
         cards.forEach(c => c !== card && c.classList.add('inactive'));
-        info.classList.add('active');
+        if (info) info.classList.add('active');
       }
-    });
-  });
+    }
 
-  document.addEventListener('click', () => {
-    cards.forEach(c => c.classList.remove('active', 'inactive'));
-    infos.forEach(i => i.classList.remove('active'));
-  });
-</script>
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleGame(card);
+      });
+
+      // keyboard accessibility
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggleGame(card);
+        }
+      });
+    });
+
+    // click anywhere else closes
+    document.addEventListener('click', () => resetGames());
+  </script>
 
 </body>
 </html>
-
