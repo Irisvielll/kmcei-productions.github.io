@@ -376,35 +376,57 @@
      GAME CARD INTERACTION
 ========================= -->
 <script>
-const cards = document.querySelectorAll('.game-card');
-const infos = document.querySelectorAll('.game-info');
+  const gameCards = document.querySelectorAll('.game-card');
+  const gameInfos = document.querySelectorAll('.game-info');
 
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    const id = card.dataset.game;
-    const info = document.getElementById(id);
-    const isActive = card.classList.contains('active');
+  let activeGame = null;
 
-    // Reset everything
-    cards.forEach(c => c.classList.remove('active', 'inactive'));
-    infos.forEach(i => i.classList.remove('active'));
+  gameCards.forEach(card => {
+    card.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
 
-    // If already open, close all
-    if (isActive) return;
+      const gameId = card.dataset.game;
+      const infoPanel = document.getElementById(gameId);
 
-    // Activate clicked card + info
-    card.classList.add('active');
-    info.classList.add('active');
+      // If clicking the same card → close it
+      if (card.classList.contains('active')) {
+        resetGames();
+        return;
+      }
 
-    // Dim other cards
-    cards.forEach(c => {
-      if (c !== card) c.classList.add('inactive');
+      resetGames();
+
+      // Activate clicked card
+      card.classList.add('active');
+      activeGame = card;
+
+      // Dim other cards
+      gameCards.forEach(c => {
+        if (c !== card) c.classList.add('inactive');
+      });
+
+      // Show matching info
+      infoPanel.classList.add('active');
+    });
+  });
+
+  // Click anywhere outside → close
+  document.addEventListener('click', () => {
+    resetGames();
+  });
+
+  function resetGames() {
+    gameCards.forEach(card => {
+      card.classList.remove('active', 'inactive');
     });
 
-    // Smooth scroll to info
-    info.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
+    gameInfos.forEach(info => {
+      info.classList.remove('active');
+    });
+
+    activeGame = null;
+  }
 </script>
 
 </body>
