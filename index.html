@@ -239,7 +239,7 @@
     <div class="team-grid">
 
       <article class="team-member">
-        <img src="images/team/gallery/gallery1.jpeg" alt="Luvelre N.">
+        <img src="images/gallery/gallery1.jpg" alt="Luvelre N.">
         <h4>Luvelre N.</h4>
         <p class="team-role">Narrative Designer & Lead Scriptwriter</p>
 
@@ -250,7 +250,7 @@
       </article>
 
       <article class="team-member">
-        <img src="images/team/gallery/gallery1.jpeg" alt="Milo G.">
+        <img src="images/gallery/gallery1.jpg" alt="Milo G.">
         <h4>Milo G.</h4>
         <p class="team-role">Lead Visual Artist & Animation Director</p>
 
@@ -261,7 +261,7 @@
       </article>
 
        <article class="team-member">
-        <img src="images/team/gallery/gallery1.jpeg" alt="Kevin N.">
+        <img src="images/gallery/gallery1.jpg" alt="Kevin N.">
         <h4>Kevin N.</h4>
         <p class="team-role">Lead Technical Designer & Developer</p>
 
@@ -272,7 +272,7 @@
       </article>
 
       <article class="team-member">
-        <img src="images/gallery/gallery1.jpeg" alt="KonneAqua">
+        <img src="images/gallery/gallery1.jpg" alt="KonneAqua">
         <h4>KonneAqua</h4>
         <p class="team-role">Audio Director & Lead Composer</p>
 
@@ -306,17 +306,17 @@
 
   <!-- AD ITEM 1 -->
   <div class="ad-slide active">
-    <img src="images/gallery/gallery1.jpeg" alt="Partner Studio 1">
+    <img src="images/gallery/gallery1.jpg" alt="Partner Studio 1">
   </div>
 
   <!-- AD ITEM 2 -->
   <div class="ad-slide">
-    <img src="images/gallery/gallery1.jpeg">
+    <img src="images/gallery/gallery1.jpg"
   </div>
 
   <!-- AD ITEM 3 -->
   <div class="ad-slide">
-    <img src="images/gallery/gallery1.jpeg"
+    <img src="images/gallery/gallery1.jpg"
          alt="Partner Studio 3"
          style="background:white; padding:10px;">
   </div>
@@ -424,63 +424,25 @@
     document.addEventListener('click', () => resetGames());
   </script>
 <script>
-/* ======================================================
-   AD CONVEYOR — FADE ONLY (PERF SAFE)
-====================================================== */
-const ads = document.querySelectorAll('.ad-slide');
-let adIndex = 0;
 
-if (ads.length > 0) {
-  ads[0].classList.add('active');
-
-  setInterval(() => {
-    ads[adIndex].classList.remove('active');
-    adIndex = (adIndex + 1) % ads.length;
-    ads[adIndex].classList.add('active');
-  }, 4500); // change timing here
-}
-</script>
 <script>
-/* =========================================
-   AD CONVEYOR — FADE ONLY (CPU SAFE)
-========================================= */
 window.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.ad-slide');
   let current = 0;
 
-  if (!slides.length) return;
+  if (slides.length === 0) return;
+
+  slides[0].classList.add('active');
 
   setInterval(() => {
     slides[current].classList.remove('active');
     current = (current + 1) % slides.length;
     slides[current].classList.add('active');
-  }, 3500);
+  }, 4000); // change speed here
 });
 </script>
 
-<script>
-const slides = document.querySelectorAll('.ad-slide');
-let i = 0;
 
-setInterval(() => {
-  slides[i].classList.remove('active');
-  i = (i + 1) % slides.length;
-  slides[i].classList.add('active');
-}, 4000);
-</script>
-
-<script>
-  const slides = document.querySelectorAll('.ad-slide');
-  let index = 0;
-
-  if (slides.length > 1) {
-    setInterval(() => {
-      slides[index].classList.remove('active');
-      index = (index + 1) % slides.length;
-      slides[index].classList.add('active');
-    }, 3500);
-  }
-</script>
 
 </body>
 </html>
