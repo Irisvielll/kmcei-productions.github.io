@@ -434,6 +434,24 @@ if (ads.length > 0) {
   }, 4500); // change timing here
 }
 </script>
+<script>
+/* =========================================
+   AD CONVEYOR — FADE ONLY (CPU SAFE)
+   No transform, no translate, no GPU stress
+========================================= */
+(function () {
+  const slides = document.querySelectorAll('.ad-slide');
+  let current = 0;
+
+  if (!slides.length) return;
+
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 3500); // change speed here (ms)
+})();
+</script>
 
 </body>
 </html>
