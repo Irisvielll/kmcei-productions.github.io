@@ -354,8 +354,7 @@
 
   cards.forEach(card => {
     card.addEventListener('click', e => {
-      e.preventDefault();
-      e.stopImmediatePropagation();
+      e.stopPropagation();
 
       const id = card.dataset.game;
       const info = document.getElementById(id);
@@ -381,5 +380,3 @@
 </body>
 </html>
 
-</body>
-</html>
