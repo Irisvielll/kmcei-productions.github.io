@@ -292,18 +292,6 @@
     - It sets iframe src and opens modal
     - Closing clears iframe src (stops audio)
   ====================================================== -->
-  <div id="trailerModal" class="modal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Trailer modal">
-      <button class="modal-close" type="button" aria-label="Close trailer">✕</button>
-      <div class="modal-frame">
-        <iframe id="trailerFrame"
-          src=""
-          title="Game Trailer"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
 
   <!-- ======================================================
     JAVASCRIPT (SAFE + MINIMAL)
@@ -331,31 +319,7 @@
       setTheme(next);
     });
 
-    // ---------- Trailer Modal ----------
-    const modal = document.getElementById('trailerModal');
-    const frame = document.getElementById('trailerFrame');
-    const closeBtn = document.querySelector('.modal-close');
 
-    function openTrailer(url) {
-      frame.src = url;
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-    }
-
-    function closeTrailer() {
-      frame.src = '';
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-    }
-
-    document.querySelectorAll('.game-card').forEach(card => {
-      const url = card.dataset.trailer;
-
-      card.addEventListener('click', () => openTrailer(url));
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') openTrailer(url);
-      });
-    });
 
     closeBtn.addEventListener('click', closeTrailer);
     modal.addEventListener('click', (e) => {
