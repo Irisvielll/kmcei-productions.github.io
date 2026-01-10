@@ -502,3 +502,62 @@ h2{
   }
 }
 
+/* ======================================================
+   ADS / PARTNERS — FINAL SECTION
+====================================================== */
+
+.ads-band {
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.95)
+  );
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 50px 18px 60px;
+}
+
+.ads-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ads-label {
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 14px;
+}
+
+.ads-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+/* Ad / Partner Card */
+.ad-card {
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+
+  font-size: 0.85rem;
+  letter-spacing: 0.8px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ad-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+
+.ads-note {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
