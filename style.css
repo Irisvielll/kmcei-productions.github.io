@@ -843,7 +843,7 @@ h2{
 ======================================================================================================================================================================================================= */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
   max-width: 1100px;
   margin: 30px auto 0;
