@@ -633,6 +633,11 @@ h2{
 
 .team-member {
   position: relative;
+  min-height: 220px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   background: rgba(0,0,0,0.28);
   border-radius: 18px;
@@ -641,14 +646,11 @@ h2{
 
   box-shadow: 0 18px 40px rgba(0,0,0,0.35);
   backdrop-filter: blur(10px);
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* 🧲 Hover lift */
-.team-member:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 28px 55px rgba(0,0,0,0.45);
+.team-links {
+  margin-top: auto;
+  flex-wrap: wrap;
 }
 
 /* =========================
